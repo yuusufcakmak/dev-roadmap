@@ -1,0 +1,2960 @@
+// React öğrenme roadmap verisi
+export interface Topic {
+  id: string;
+  title: string;
+  description: string;
+  duration: string;
+  difficulty: 'easy' // Tablo burada olacak 'hard';
+  content: string;
+  codeExamples: {
+    id: string;
+    title: string;
+    code: string;
+    language: string;
+    description: string;
+  }[];
+  relatedProjects: string[];
+  resources: {
+    id: string;
+    title: string;
+    url: string;
+    type: 'documentation' // Tablo burada olacak 'video';
+  }[];
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  icon: string;
+  description: string;
+  topics: Topic[];
+}
+
+export interface Level {
+  id: string;
+  name: string;
+  order: number;
+  icon?: string;
+  categories: Category[];
+}
+
+export const roadmapData: Level[] = [
+  {
+    id: 'react-101',
+    name: 'React 101 - Başlangıç Seviyesi',
+    order: 1,
+    categories: [
+      {
+        id: 'temel-kavramlar',
+        name: 'React ile İlgili Temel Kavramlar',
+        icon: '',
+        description: 'React\'in temel kavramları ve felsefesi',
+        topics: [
+          {
+            id: 'react-nedir',
+            title: 'React Nedir?',
+            description: 'React kütüphanesinin temellerini öğrenin',
+            duration: '30 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['hello-world-app'],
+            resources: [
+              {
+                id: 'react-docs',
+                title: 'React Resmi Dokümantasyonu (Türkçe)',
+                url: 'https://tr.react.dev',
+                type: 'documentation'
+              },
+              {
+                id: 'react-tutorial',
+                title: 'React Tutorial - Tic Tac Toe',
+                url: 'https://tr.react.dev/learn/tutorial-tic-tac-toe',
+                type: 'tutorial'
+              },
+              {
+                id: 'react-blog',
+                title: 'React Blog - En Son Haberler',
+                url: 'https://react.dev/blog',
+                type: 'article'
+              },
+              {
+                id: 'react-community',
+                title: 'React Topluluğu',
+                url: 'https://react.dev/community/versioning-policy',
+                type: 'article'
+              },
+              {
+                id: 'react-github',
+                title: 'React GitHub Repository',
+                url: 'https://github.com/facebook/react',
+                type: 'documentation'
+              },
+              {
+                id: 'react-stackoverflow',
+                title: 'React Stack Overflow',
+                url: 'https://stackoverflow.com/questions/tagged/reactjs',
+                type: 'article'
+              },
+              {
+                id: 'react-discord',
+                title: 'React Discord Topluluğu',
+                url: 'https://discord.gg/react',
+                type: 'article'
+              },
+              {
+                id: 'react-youtube',
+                title: 'React YouTube Kanalı',
+                url: 'https://www.youtube.com/c/ReactConf',
+                type: 'video'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'gelistirme-ortami',
+        name: 'Geliştirme Ortamının Hazırlanması',
+        icon: '️',
+        description: 'React geliştirme için gerekli araçlar ve kurulumlar',
+        topics: [
+          {
+            id: 'nelere-ihtiyacimiz-var',
+            title: 'Nelere İhtiyacımız Olacak?',
+            description: 'React geliştirme için gerekli araçlar ve önkoşullar',
+            duration: '15 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['prerequisites-setup'],
+            resources: [
+              {
+                id: 'vscode-download',
+                title: 'VS Code İndirme',
+                url: 'https://code.visualstudio.com/download',
+                type: 'documentation'
+              },
+              {
+                id: 'webstorm-download',
+                title: 'WebStorm İndirme',
+                url: 'https://www.jetbrains.com/webstorm/download/',
+                type: 'documentation'
+              },
+              {
+                id: 'nodejs-download',
+                title: 'Node.js İndirme',
+                url: 'https://nodejs.org/en/download/',
+                type: 'documentation'
+              },
+              {
+                id: 'git-download',
+                title: 'Git İndirme',
+                url: 'https://git-scm.com/downloads',
+                type: 'documentation'
+              },
+              {
+                id: 'html-tutorial',
+                title: 'HTML Tutorial',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+                type: 'tutorial'
+              },
+              {
+                id: 'css-tutorial',
+                title: 'CSS Tutorial',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+                type: 'tutorial'
+              },
+              {
+                id: 'javascript-tutorial',
+                title: 'JavaScript Tutorial',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+                type: 'tutorial'
+              }
+            ]
+          },
+          {
+            id: 'node-js-kurulumu',
+            title: 'Node.js Kurulumu',
+            description: 'Node.js ve NPM kurulumu',
+            duration: '15 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['nodejs-setup'],
+            resources: [
+              {
+                id: 'nodejs-docs',
+                title: 'Node.js Resmi Dokümantasyonu',
+                url: 'https://nodejs.org/docs/',
+                type: 'documentation'
+              },
+              {
+                id: 'npm-docs',
+                title: 'NPM Dokümantasyonu',
+                url: 'https://docs.npmjs.com/',
+                type: 'documentation'
+              },
+              {
+                id: 'nvm-docs',
+                title: 'NVM Kurulum Rehberi',
+                url: 'https://github.com/nvm-sh/nvm',
+                type: 'documentation'
+              },
+              {
+                id: 'nodejs-tutorial',
+                title: 'Node.js Tutorial',
+                url: 'https://nodejs.org/en/learn/',
+                type: 'tutorial'
+              }
+            ]
+          },
+          {
+            id: 'create-react-app',
+            title: 'Create React App ile Proje Oluşturma',
+            description: 'NPX kullanarak ilk React uygulamanızı oluşturun',
+            duration: '20 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['first-react-app'],
+            resources: [
+              {
+                id: 'cra-docs',
+                title: 'Create React App Dokümantasyonu',
+                url: 'https://create-react-app.dev/',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'gelistirme-sureci',
+            title: 'React Geliştirme Süreci',
+            description: 'React geliştirme sürecinin adım adım şeması',
+            duration: '10 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['development-setup'],
+            resources: [
+              {
+                id: 'react-dev-process',
+                title: 'React Geliştirme Süreci Rehberi',
+                url: 'https://tr.react.dev/learn',
+                type: 'documentation'
+              },
+              {
+                id: 'nodejs-install',
+                title: 'Node.js Kurulum Rehberi',
+                url: 'https://nodejs.org/en/download/',
+                type: 'documentation'
+              },
+              {
+                id: 'vscode-setup',
+                title: 'VS Code React Kurulumu',
+                url: 'https://code.visualstudio.com/docs/languages/javascript',
+                type: 'tutorial'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'react-icin-javascript',
+        name: 'React İçin JavaScript',
+        icon: '',
+        description: 'React geliştirme için gerekli JavaScript temelleri',
+        topics: [
+          {
+            id: 'var-let-const',
+            title: 'Var, Let ve Const Keywords',
+            description: 'JavaScript değişken tanımlama anahtar kelimeleri',
+            duration: '20 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['javascript-basics'],
+            resources: [
+              {
+                id: 'mdn-var-let-const',
+                title: 'MDN: Var, Let, Const',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'export-import',
+            title: 'Export ve Import (Modules)',
+            description: 'JavaScript modül sistemi ve import/export kullanımı',
+            duration: '25 dakika',
+            difficulty: 'easy',
+            content: "string", error);
+    return null;
+  }
+};
+\"string"\"string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['javascript-basics'],
+            resources: [
+              {
+                id: 'mdn-modules',
+                title: 'MDN: JavaScript Modules',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'arrow-functions',
+            title: 'Arrow Functions',
+            description: 'JavaScript arrow function\'larının kullanımı',
+            duration: '25 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['javascript-basics'],
+            resources: [
+              {
+                id: 'mdn-arrow-functions',
+                title: 'MDN: Arrow Functions',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'classes',
+            title: 'Classes (Sınıflar)',
+            description: 'JavaScript ES6 class yapısı ve kullanımı',
+            duration: '30 dakika',
+            difficulty: 'medium',
+            content: "string", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    return response.json();
+  }
+}
+
+// React'te kullanım
+const apiClient = new ApiClient('https://api.example.com');
+
+const UserList = () => {
+  const [users, setUsers] = useState([]);
+  
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const data = await apiClient.get('/users');
+      setUsers(data);
+    };
+    
+    fetchUsers();
+  }, []);
+  
+  return (
+    // JSX kodu burada olacak
+      {users.map(user => (
+        // JSX kodu burada olacak{user.name}// JSX kodu burada olacak
+      ))}
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['javascript-basics'],
+            resources: [
+              {
+                id: 'mdn-classes',
+                title: 'MDN: Classes',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'destructuring',
+            title: 'Destructuring',
+            description: 'JavaScript destructuring kullanımı',
+            duration: '20 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['javascript-basics'],
+            resources: [
+              {
+                id: 'mdn-destructuring',
+                title: 'MDN: Destructuring Assignment',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'spread-rest-operator',
+            title: 'Spread ve Rest Operatörü',
+            description: 'JavaScript spread ve rest operatörlerinin kullanımı',
+            duration: '25 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['javascript-basics'],
+            resources: [
+              {
+                id: 'mdn-spread-rest',
+                title: 'MDN: Spread Syntax',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'reference-primitive-types',
+            title: 'Reference ve Primitive Tipler',
+            description: 'JavaScript veri tipleri ve referans kavramları',
+            duration: '25 dakika',
+            difficulty: 'medium',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['javascript-basics'],
+            resources: [
+              {
+                id: 'mdn-data-types',
+                title: 'MDN: JavaScript Data Types',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'temel-react-component',
+        name: 'TEMEL REACT VE COMPONENT MANTIGI',
+        icon: '️',
+        description: 'React temel kavramları ve component yapısı',
+        topics: [
+          {
+            id: 'react-component-yapisi',
+            title: 'React Component Yapısının Önemi',
+            description: 'JavaScript yerine React: Geliştirmeyi Kolaylaştıran Component Yapısı',
+            duration: '8 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['react-basics'],
+            resources: [
+              {
+                id: 'react-components',
+                title: 'React Components',
+                url: 'https://tr.react.dev/learn/your-first-component',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'react-kurulumu',
+            title: 'React Kurulumu',
+            description: 'React: Sıfırdan Kurulum ve İlk Projeniz',
+            duration: '14 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['react-setup'],
+            resources: [
+              {
+                id: 'create-react-app',
+                title: 'Create React App',
+                url: 'https://create-react-app.dev/',
+                type: 'documentation'
+              },
+              {
+                id: 'nodejs-download',
+                title: 'Node.js İndirme',
+                url: 'https://nodejs.org/en/download/',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'react-dosya-yapisi',
+            title: 'React Dosya ve Klasör Yapısı',
+            description: 'React Projesinde Dosya ve Klasör Yapısı: index.js, src ve public Klasörleri',
+            duration: '17 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['react-structure'],
+            resources: [
+              {
+                id: 'react-file-structure',
+                title: 'React File Structure',
+                url: 'https://react.dev/learn/importing-and-exporting-components',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'react-calisma-mantigi',
+            title: 'React Çalışma Mantığı',
+            description: 'React nasıl çalışır ve temel kavramlar',
+            duration: '10 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['react-lifecycle'],
+            resources: [
+              {
+                id: 'react-lifecycle',
+                title: 'React Lifecycle',
+                url: 'https://react.dev/learn/lifecycle-of-reactive-effects',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'react-state-events',
+        name: 'REACT STATE VE EVENTLERLE CALISMAK',
+        icon: '',
+        description: 'React state yönetimi ve event handling',
+        topics: [
+          {
+            id: 'react-eventlerle-calismak',
+            title: 'React Eventlerle Çalışmak',
+            description: 'React\'te event handling ve kullanıcı etkileşimleri',
+            duration: '8 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['event-handling'],
+            resources: [
+              {
+                id: 'react-events',
+                title: 'React Events',
+                url: 'https://react.dev/learn/responding-to-events',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'react-state-mantigi',
+            title: 'React State Mantığı',
+            description: 'React state yönetimi ve mantığı',
+            duration: '15 dakika',
+            difficulty: 'medium',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['state-management'],
+            resources: [
+              {
+                id: 'react-state',
+                title: 'React State',
+                url: 'https://react.dev/learn/state-a-components-memory',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'react-usestate-hook',
+            title: 'React useState Hook',
+            description: 'useState hook kullanımı ve state yönetimi',
+            duration: '12 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['usestate-examples'],
+            resources: [
+              {
+                id: 'react-usestate',
+                title: 'React useState',
+                url: 'https://react.dev/reference/react/useState',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'usestate-uygulama',
+            title: 'useState Uygulama',
+            description: 'useState hook pratik uygulamaları',
+            duration: '13 dakika',
+            difficulty: 'medium',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['todo-app', 'shopping-cart', 'form-validation'],
+            resources: [
+              {
+                id: 'usestate-practices',
+                title: 'useState Best Practices',
+                url: 'https://react.dev/learn/state-a-components-memory',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'form-inputlarini-ekleme',
+            title: 'Form Inputlarını Ekleme',
+            description: 'React form input türleri ve kullanımı',
+            duration: '10 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['form-builder', 'user-registration'],
+            resources: [
+              {
+                id: 'html-input-types',
+                title: 'HTML Input Types',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'form-inputlarini-dinleme',
+            title: 'Form Inputlarını Dinleme',
+            description: 'Form input değişikliklerini dinleme ve yönetme',
+            duration: '5 dakika',
+            difficulty: 'easy',
+            content: "string", value);
+  };
+
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacak handleInputChange('name', e.target.value)}
+        placeholder="İsim"
+      />
+      // JSX kodu burada olacak handleInputChange('email', e.target.value)}
+        placeholder="Email"
+      />
+      // JSX kodu burada olacak handleInputChange('phone', e.target.value)}
+        placeholder="Telefon"
+      />
+      
+      // JSX kodu burada olacak
+        // JSX kodu burada olacakForm Verisi:// JSX kodu burada olacak
+        // JSX kodu burada olacak{JSON.stringify(formData, null, 2)}// JSX kodu burada olacak
+      // JSX kodu burada olacak
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+const FileInputListener = () => {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [fileInfo, setFileInfo] = useState(null);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedFile(file);
+    
+    if (file) {
+      setFileInfo({
+        name: file.name,
+        size: file.size,
+        type: file.type,
+        lastModified: new Date(file.lastModified).toLocaleString()
+      });
+      
+      console.log('Dosya seçildi:', file.name);
+    }
+  };
+
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacak
+      
+      {fileInfo && (
+        // JSX kodu burada olacak
+          // JSX kodu burada olacakDosya Bilgileri:// JSX kodu burada olacak
+          // JSX kodu burada olacakİsim: {fileInfo.name}// JSX kodu burada olacak
+          // JSX kodu burada olacakBoyut: {fileInfo.size} bytes// JSX kodu burada olacak
+          // JSX kodu burada olacakTür: {fileInfo.type}// JSX kodu burada olacak
+          // JSX kodu burada olacakSon değişiklik: {fileInfo.lastModified}// JSX kodu burada olacak
+        // JSX kodu burada olacak
+      )}
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+const RangeInputListener = () => {
+  const [value, setValue] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const handleChange = (e) => {
+    setValue(Number(e.target.value));
+  };
+
+  const handleMouseDown = () => {
+    setIsDragging(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacak
+      // JSX kodu burada olacakDeğer: {value}// JSX kodu burada olacak
+      // JSX kodu burada olacakDurum: {isDragging ? 'Sürükleniyor' : 'Hareket etmiyor'}// JSX kodu burada olacak
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+const EventTypeListener = () => {
+  const [events, setEvents] = useState([]);
+
+  const addEvent = (eventType, value) => {
+    setEvents(prev => [...prev, {
+      type: eventType,
+      value: value,
+      timestamp: new Date().toLocaleTimeString()
+    }]);
+  };
+
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacak addEvent('onChange', e.target.value)}
+        onInput={(e) => addEvent('onInput', e.target.value)}
+        onFocus={() => addEvent('onFocus', 'Focused')}
+        onBlur={() => addEvent('onBlur', 'Blurred')}
+        onKeyDown={(e) => addEvent('onKeyDown', e.key)}
+        onKeyUp={(e) => addEvent('onKeyUp', e.key)}
+        placeholder="Farklı event'leri test edin"
+      />
+      
+      // JSX kodu burada olacak
+        // JSX kodu burada olacakEvent Log:// JSX kodu burada olacak
+        // JSX kodu burada olacak
+          {events.slice(-10).map((event, index) => (
+            // JSX kodu burada olacak
+              {event.timestamp} - {event.type}: {event.value}
+            // JSX kodu burada olacak
+          ))}
+        // JSX kodu burada olacak
+      // JSX kodu burada olacak
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+const ValidationListener = () => {
+  const [value, setValue] = useState('');
+  const [errors, setErrors] = useState([]);
+
+  const validateInput = (inputValue) => {
+    const newErrors = [];
+    
+    if (inputValue.length // JSX kodu burada olacak 20) {
+      newErrors.push('En fazla 20 karakter olabilir');
+    }
+    
+    if (!/^[a-zA-Z0-9]+$/.test(inputValue) && inputValue.length > 0) {
+      newErrors.push('Sadece harf ve rakam kullanılabilir');
+    }
+    
+    return newErrors;
+  };
+
+  const handleChange = (e) => {
+    const newValue = e.target.value;
+    setValue(newValue);
+    setErrors(validateInput(newValue));
+  };
+
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacak 0 ? 'red' : 'green'
+        }}
+      />
+      
+      {errors.length > 0 && (
+        // JSX kodu burada olacak
+          {errors.map((error, index) => (
+            // JSX kodu burada olacak{error}// JSX kodu burada olacak
+          ))}
+        // JSX kodu burada olacak
+      )}
+      
+      // JSX kodu burada olacakDeğer: {value}// JSX kodu burada olacak
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['form-validation', 'search-input'],
+            resources: [
+              {
+                id: 'react-events',
+                title: 'React Events',
+                url: 'https://react.dev/learn/responding-to-events',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'birden-fazla-state-ile-calismak',
+            title: 'Birden Fazla State İle Çalışmak',
+            description: 'Çoklu state yönetimi ve koordinasyonu',
+            duration: '6 dakika',
+            difficulty: 'medium',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['multi-step-form', 'dashboard'],
+            resources: [
+              {
+                id: 'react-state-management',
+                title: 'React State Management',
+                url: 'https://react.dev/learn/state-a-components-memory',
+                type: 'documentation'
+              }
+            ]
+          },
+          {
+            id: 'coklu-stateleri-tek-state-icinde-yazmak',
+            title: 'Çoklu Stateleri Tek State İçinde Yazmak',
+            description: 'Birden fazla state\'i tek state objesi içinde yönetme',
+            duration: '7 dakika',
+            difficulty: 'medium',
+            content: "string", value);
+  };
+
+  const setLoading = (loading) => {
+    updateState('ui.loading', loading);
+  };
+
+  const setError = (error) => {
+    updateState('ui.error', error);
+  };
+
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacakCounter: {state.count}// JSX kodu burada olacak
+      // JSX kodu burada olacak updateState('count', state.count + 1)}>
+        Artır
+      // JSX kodu burada olacak
+      
+      // JSX kodu burada olacakItems: {state.items.length}// JSX kodu burada olacak
+      // JSX kodu burada olacak addItem({ id: Date.now(), name: 'New Item' })}>
+        Item Ekle
+      // JSX kodu burada olacak
+      
+      // JSX kodu burada olacakFilters// JSX kodu burada olacak
+      // JSX kodu burada olacak updateFilter('category', e.target.value)}
+      >
+        // JSX kodu burada olacakTümü// JSX kodu burada olacak
+        // JSX kodu burada olacakElektronik// JSX kodu burada olacak
+        // JSX kodu burada olacakGiyim// JSX kodu burada olacak
+      // JSX kodu burada olacak
+      
+      // JSX kodu burada olacak updateFilter('price.min', Number(e.target.value))}
+        placeholder="Min Fiyat"
+      />
+      
+      // JSX kodu burada olacak updateFilter('price.max', Number(e.target.value))}
+        placeholder="Max Fiyat"
+      />
+      
+      // JSX kodu burada olacak
+        // JSX kodu burada olacak updateFilter('inStock', e.target.checked)}
+        />
+        Stokta Var
+      // JSX kodu burada olacak
+      
+      // JSX kodu burada olacakUI State// JSX kodu burada olacak
+      // JSX kodu burada olacakLoading: {state.ui.loading ? 'Yes' : 'No'}// JSX kodu burada olacak
+      // JSX kodu burada olacakError: {state.ui.error // Tablo burada olacak 'None'}// JSX kodu burada olacak
+      // JSX kodu burada olacakModal: {state.ui.modalOpen ? 'Open' : 'Closed'}// JSX kodu burada olacak
+      
+      // JSX kodu burada olacak setLoading(!state.ui.loading)}>
+        Toggle Loading
+      // JSX kodu burada olacak
+      
+      // JSX kodu burada olacak setError(state.ui.error ? null : 'Test Error')}>
+        Toggle Error
+      // JSX kodu burada olacak
+      
+      // JSX kodu burada olacak updateState('ui.modalOpen', !state.ui.modalOpen)}>
+        Toggle Modal
+      // JSX kodu burada olacak
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+const StateWithComputedValues = () => {
+  const [state, setState] = useState({
+    items: [
+      { id: 1, name: 'Item 1', price: 10, quantity: 2 },
+      { id: 2, name: 'Item 2', price: 20, quantity: 1 },
+      { id: 3, name: 'Item 3', price: 15, quantity: 3 }
+    ],
+    discount: 0,
+    tax: 0.18
+  });
+
+  // Computed values
+  const subtotal = state.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const discountAmount = subtotal * (state.discount / 100);
+  const taxAmount = (subtotal - discountAmount) * state.tax;
+  const total = subtotal - discountAmount + taxAmount;
+
+  const updateItemQuantity = (id, quantity) => {
+    setState(prev => ({
+      ...prev,
+      items: prev.items.map(item =>
+        item.id === id ? { ...item, quantity } : item
+      )
+    }));
+  };
+
+  const updateDiscount = (discount) => {
+    setState(prev => ({
+      ...prev,
+      discount
+    }));
+  };
+
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacakShopping Cart// JSX kodu burada olacak
+      
+      {state.items.map(item => (
+        // JSX kodu burada olacak
+          // JSX kodu burada olacak{\"string"}// JSX kodu burada olacak
+          // JSX kodu burada olacakFiyat: \// Template literal burada olacak// JSX kodu burada olacak
+          // JSX kodu burada olacakMiktar: {item.quantity}// JSX kodu burada olacak
+          // JSX kodu burada olacakToplam: \// Template literal burada olacak\"string"item.id\"string"item.id\"string"\"string"
+
+ Custom Hooks for State Management
+Custom State Hook:
+\"string"\"string"\"string"
+
+ Best Practices
+State Structure:
+Logical grouping - İlgili verileri gruplayın
+Flat structure - Mümkün olduğunca düz yapı
+Consistent naming - Tutarlı isimlendirme
+Performance:
+Immutable updates - Değişmez güncellemeler
+Selective updates - Seçici güncellemeler
+Memoization - Gerektiğinde memoization
+Maintainability:
+Clear separation - Net ayrım
+Custom hooks - Özel hook'lar
+Type safety - Tip güvenliği
+
+ Sonuç
+
+Tek state objesi yaklaşımı:
+Simplified management - Basitleştirilmiş yönetim
+Better performance - Daha iyi performans
+Easier testing - Kolay test etme
+Consistent updates - Tutarlı güncellemeler
+
+Tek state objesi yaklaşımı, karmaşık state yönetimini basitleştiren güçlü bir tekniktir."string"JavaScript Map Metodunu İyi Anlamak �
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string"React Key Özelliği
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string"React Conditional Content
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string"btn-\// Template literal burada olacak\"string"\"string"
+Conditional Lists:
+\"string"\"string"\"string"
+Conditional Components:
+\"string"\"string"\"string"
+Conditional Hooks:
+\"string"\"string"\"string"
+
+ Complex Conditional Scenarios
+Form Validation:
+\"string"\"string"\"string"
+Dynamic Content Loading:
+\"string"\"string"\"string"
+
+ Best Practices
+Early Returns:
+\"string"\"string"\"string"
+Extract Conditional Logic:
+\"string"\"string"\"string"
+Use Custom Hooks:
+\"string"\"string"\"string"
+
+ Sonuç
+
+React conditional content:
+Dynamic UI - Dinamik kullanıcı arayüzü
+User experience - Kullanıcı deneyimi
+State management - Durum yönetimi
+Performance - Performans optimizasyonu
+
+Conditional rendering, React uygulamalarının temel yapı taşlarından biridir."string"React Conditional State
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string"React Hata Mesajlarını Okuyup Anlama
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string"React Projelerimizi Analiz Etmek
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string"React Breakpointlerle Çalışmak
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string"\"string"
+
+ Debugging Strategies
+Step-by-Step Debugging:
+\"string"\"string"\"string"
+Error Boundary Breakpoint:
+\"string"\"string"\"string"
+
+ Breakpoint Best Practices
+Strategic Breakpoint Placement:
+\"string"\"string"\"string"
+Conditional Breakpoints:
+\"string"\"string"\"string"
+Performance-Aware Breakpoints:
+\"string"\"string"\"string"
+
+ Sonuç
+
+React breakpoint kullanımı:
+Step-by-step debugging - Adım adım hata ayıklama
+Variable inspection - Değişken inceleme
+Error tracking - Hata takibi
+Performance analysis - Performans analizi
+
+Breakpoint'ler, React uygulamalarında karmaşık hataları bulmak için vazgeçilmez araçlardır."string"React DevTools Kullanımı
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string"Side Effects Nedir?
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string"useEffect Nedir?
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string"useEffect ve Dependencies
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string"\"string"
+
+ Dependency Array Best Practices
+ESLint Rules:
+\"string"\"string"\"string"
+Common Mistakes:
+\"string"\"string"\"string"
+
+ Dependency Array Özet
+
+Dependency Array Kuralları:
+Boş array [] - Sadece mount'ta çalışır
+Tek dependency [dep] - Sadece o değer değiştiğinde çalışır
+Çoklu dependencies [dep1, dep2] - Herhangi biri değiştiğinde çalışır
+Object dependencies - useMemo ile memoize et
+Function dependencies - useCallback ile memoize et
+
+Dependency Array Avantajları:
+Performance - Gereksiz re-render'ları önler
+Predictability - Ne zaman çalışacağı bellidir
+Debugging - Hangi değerlerin değiştiğini takip eder
+Memory management - Cleanup function'ları doğru çalışır
+
+Dependency Array Dikkat Edilecekler:
+️ Object references - Her render'da yeni referans
+️ Function references - useCallback kullan
+️ Array references - useMemo kullan
+️ ESLint warnings - exhaustive-deps kuralını takip et
+
+useEffect dependency array'i, React uygulamalarında performans ve doğru davranış için kritik öneme sahiptir."string"useEffect Cleanup Fonksiyonu Kullanımı
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string"HTTP error! status: \// Template literal burada olacak\"string"\"string"
+Memory Leak Prevention:
+\"string"\"string"\"string"
+
+ Cleanup Function Best Practices
+Cleanup Function Patterns:
+\"string"\"string"\"string"
+Common Cleanup Mistakes:
+\"string"\"string"\"string"
+
+ Cleanup Function Özet
+
+Cleanup Function Kuralları:
+Her useEffect'te cleanup - Gerektiğinde cleanup function ekle
+Resource temizliği - Timer, event listener, subscription'ları temizle
+Memory leak önleme - Unmount edilen component'lerin kaynaklarını serbest bırak
+Conditional cleanup - Koşullu kaynaklar için conditional cleanup
+Multiple resources - Birden fazla kaynak için tümünü temizle
+
+Cleanup Function Avantajları:
+Memory leak önleme - Bellek sızıntılarını önler
+Resource management - Kaynakları doğru yönetir
+Performance - Gereksiz işlemleri durdurur
+Stability - Uygulama kararlılığını artırır
+
+Cleanup Function Dikkat Edilecekler:
+️ Timer cleanup - setInterval, setTimeout temizle
+️ Event listener cleanup - addEventListener'ları kaldır
+️ Subscription cleanup - WebSocket, polling temizle
+️ Animation cleanup - requestAnimationFrame iptal et
+
+useEffect cleanup function'ı, React uygulamalarında memory leak'leri önlemek ve kaynakları doğru yönetmek için kritik öneme sahiptir."string"useEffect Özet
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string"useReducer Nedir?
+
+Bu konu hakkında temel bilgileri öğrenmek için aşağıdaki kaynakları inceleyebilirsiniz:
+
+Günlük Hayattan Örnek:
+Bu konuyu daha iyi anlamak için günlük hayattan örnekler düşünebilirsiniz. Her teknik kavramın gerçek hayatta bir karşılığı vardır.
+
+Temel Kavramlar:
+Bu konunun temel kavramlarını öğrenin
+Pratik örneklerle pekiştirin
+Sürekli pratik yapın
+
+Teknik Detaylar İçin:
+Resmi dokümantasyon: https://react.dev
+React öğrenme rehberi: https://react.dev/learn
+Topluluk forumları: https://react.dev/community
+MDN Web Docs: https://developer.mozilla.org"string",
+                language: 'javascript',
+                description: 'React useReducer hook örnekleri'
+              }
+            ],
+            relatedProjects: ['todo-app', 'shopping-cart', 'form-app'],
+            resources: [
+              {
+                id: 'react-usereducer',
+                title: 'React useReducer Hook',
+                url: 'https://react.dev/reference/react/useReducer',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'context-api-ve-usecontext-hook-ile-state-yonetimi',
+        name: 'CONTEXT API VE USECONTEXT HOOK İLE STATE YÖNETİMİ',
+        icon: '',
+        description: 'React Context API ve useContext hook ile global state yönetimi',
+        topics: [
+          {
+            id: 'global-state-management',
+            title: 'Global State Management',
+            description: 'React uygulamalarında global state yönetimi kavramları',
+            duration: '8 dakika',
+            difficulty: 'medium',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['auth-app', 'ecommerce-app', 'theme-app'],
+            resources: [
+              {
+                id: 'react-context',
+                title: 'React Context API',
+                url: 'https://react.dev/reference/react/createContext',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'jsx-html',
+        name: 'JSX ve HTML',
+        icon: '',
+        description: 'JSX syntax ve HTML benzerlikleri',
+        topics: [
+          {
+            id: 'jsx-nedir',
+            title: 'JSX Nedir?',
+            description: 'JSX syntax\'ının temellerini öğrenin',
+            duration: '25 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['jsx-practice'],
+            resources: [
+              {
+                id: 'jsx-docs',
+                title: 'JSX Dokümantasyonu',
+                url: 'https://tr.react.dev/learn/writing-markup-with-jsx',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'componentler',
+        name: 'Componentler',
+        icon: '🧩',
+        description: 'React componentlerinin temelleri',
+        topics: [
+          {
+            id: 'component-nedir',
+            title: 'Component Nedir?',
+            description: 'React componentlerinin temellerini öğrenin',
+            duration: '30 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['component-library'],
+            resources: [
+              {
+                id: 'components-docs',
+                title: 'Components Dokümantasyonu',
+                url: 'https://tr.react.dev/learn/your-first-component',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'event-handling',
+        name: 'Event Handling',
+        icon: '',
+        description: 'React\'te olay yönetimi',
+        topics: [
+          {
+            id: 'onclick-events',
+            title: 'onClick Events',
+            description: 'Tıklama olaylarını yönetme',
+            duration: '20 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['interactive-button'],
+            resources: [
+              {
+                id: 'events-docs',
+                title: 'Events Dokümantasyonu',
+                url: 'https://tr.react.dev/learn/responding-to-events',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'lists-keys',
+        name: 'Lists ve Keys',
+        icon: '',
+        description: 'Liste render etme ve key kullanımı',
+        topics: [
+          {
+            id: 'list-rendering',
+            title: 'Liste Render Etme',
+            description: 'Array\'leri JSX\'te render etme',
+            duration: '25 dakika',
+            difficulty: 'medium',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['todo-list'],
+            resources: [
+              {
+                id: 'lists-docs',
+                title: 'Lists ve Keys Dokümantasyonu',
+                url: 'https://tr.react.dev/learn/rendering-lists',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'props',
+        name: 'Props',
+        icon: '',
+        description: 'Props ile veri aktarımı',
+        topics: [
+          {
+            id: 'props-nedir',
+            title: 'Props Nedir?',
+            description: 'Props kavramını ve kullanımını öğrenin',
+            duration: '30 dakika',
+            difficulty: 'easy',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['user-profile'],
+            resources: [
+              {
+                id: 'props-docs',
+                title: 'Props Dokümantasyonu',
+                url: 'https://tr.react.dev/learn/passing-props-to-a-component',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'state',
+        name: 'State',
+        icon: '',
+        description: 'Component state yönetimi',
+        topics: [
+          {
+            id: 'state-nedir',
+            title: 'State Nedir?',
+            description: 'State kavramını ve useState Hook\'unu öğrenin',
+            duration: '35 dakika',
+            difficulty: 'medium',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['form-app'],
+            resources: [
+              {
+                id: 'state-docs',
+                title: 'State Dokümantasyonu',
+                url: 'https://tr.react.dev/reference/react/useState',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'lifecycle',
+        name: 'React Lifecycle',
+        icon: '',
+        description: 'Component yaşam döngüsü',
+        topics: [
+          {
+            id: 'react-lifecycle',
+            title: 'React Lifecycle',
+            description: 'Component yaşam döngüsü metodları',
+            duration: '45 dakika',
+            difficulty: 'hard',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['timer-app'],
+            resources: [
+              {
+                id: 'lifecycle-docs',
+                title: 'React Lifecycle Dokümantasyonu',
+                url: 'https://tr.react.dev/learn/lifecycle-of-reactive-effects',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'react-201',
+    name: 'React 201 - Orta Seviye',
+    order: 2,
+    categories: [
+      {
+        id: 'state-management',
+        name: 'State Management',
+        icon: '',
+        description: 'React\'te state yönetimi',
+        topics: [
+          {
+            id: 'usestate-hook',
+            title: 'useState Hook',
+            description: 'useState Hook kullanımı',
+            duration: '40 dakika',
+            difficulty: 'medium',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['counter-app'],
+            resources: [
+              {
+                id: 'usestate-docs',
+                title: 'useState Dokümantasyonu',
+                url: 'https://tr.react.dev/reference/react/useState',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'hooks',
+        name: 'React Hooks',
+        icon: '🪝',
+        description: 'React Hook\'ları',
+        topics: [
+          {
+            id: 'useeffect-hook',
+            title: 'useEffect Hook',
+            description: 'useEffect Hook kullanımı',
+            duration: '50 dakika',
+            difficulty: 'medium',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['user-profile-app'],
+            resources: [
+              {
+                id: 'useeffect-docs',
+                title: 'useEffect Dokümantasyonu',
+                url: 'https://tr.react.dev/reference/react/useEffect',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'redux',
+        name: 'Redux',
+        icon: '',
+        description: 'Redux state yönetimi',
+        topics: [
+          {
+            id: 'redux-nedir',
+            title: 'Redux Nedir?',
+            description: 'Redux kavramını ve kullanımını öğrenin',
+            duration: '60 dakika',
+            difficulty: 'hard',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['redux-todo-app'],
+            resources: [
+              {
+                id: 'redux-docs',
+                title: 'Redux Dokümantasyonu',
+                url: 'https://redux.js.org/',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'react-301',
+    name: 'React 301 - İleri Seviye',
+    order: 3,
+    categories: [
+      {
+        id: 'performance',
+        name: 'Performance Optimizasyonu',
+        icon: '',
+        description: 'React uygulamalarında performans optimizasyonu',
+        topics: [
+          {
+            id: 'react-memo',
+            title: 'React.memo ve useMemo',
+            description: 'Performans optimizasyonu teknikleri',
+            duration: '50 dakika',
+            difficulty: 'hard',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['performance-app'],
+            resources: [
+              {
+                id: 'memo-docs',
+                title: 'React.memo Dokümantasyonu',
+                url: 'https://tr.react.dev/reference/react/memo',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'react-optimizasyonn-teknikleri',
+        name: 'REACT OPTİMİZASYONN TEKNİKLERİ',
+        icon: '',
+        description: 'React uygulamalarında performans optimizasyonu teknikleri',
+        topics: [
+          {
+            id: 'react-calisma-mantigi',
+            title: 'React Çalışma Mantığı',
+            description: 'React\'in nasıl çalıştığını ve render sürecini anlama',
+            duration: '5 dakika',
+            difficulty: 'medium',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['performance-app', 'virtual-dom-demo'],
+            resources: [
+              {
+                id: 'react-reconciliation',
+                title: 'React Reconciliation',
+                url: 'https://react.dev/learn/preserving-and-resetting-state',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'react-uygulamalarinda-veritabani-baglantilari-ve-http-istekleri',
+        name: 'REACT UYGULAMALARINDA VERİTABANI BAĞLANTILARI VE HTTP İSTEKLERİ',
+        icon: '',
+        description: 'React uygulamalarında HTTP istekleri ve veri yönetimi',
+        topics: [
+          {
+            id: 'client-server-iliskisi',
+            title: 'Client - Server İlişkisi',
+            description: 'React uygulamalarında client-server mimarisi ve HTTP istekleri',
+            duration: '7 dakika',
+            difficulty: 'medium',
+            content: "string", {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData)
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to update user');
+    }
+    
+    const updatedUser = await response.json();
+    return updatedUser;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};
+
+// Kullanım
+const EditUserForm = ({ user, onUpdate }) => {
+  const [name, setName] = useState(user.name);
+  const [email, setEmail] = useState(user.email);
+  const [loading, setLoading] = useState(false);
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    
+    try {
+      const updatedUser = await updateUser(user.id, { name, email });
+      onUpdate(updatedUser);
+    } catch (error) {
+      console.error('Failed to update user:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacak setName(e.target.value)}
+        required
+      />
+      // JSX kodu burada olacak setEmail(e.target.value)}
+        required
+      />
+      // JSX kodu burada olacak
+        {loading ? 'Updating...' : 'Update User'}
+      // JSX kodu burada olacak
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+// DELETE isteği - Veri silme
+const deleteUser = async (id) => {
+  try {
+    const response = await fetch(\"string", {
+      method: 'DELETE'
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to delete user');
+    }
+    
+    return true;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};
+
+// Kullanım
+const UserItem = ({ user, onDelete }) => {
+  const [loading, setLoading] = useState(false);
+  
+  const handleDelete = async () => {
+    if (!window.confirm('Are you sure you want to delete this user?')) {
+      return;
+    }
+    
+    setLoading(true);
+    
+    try {
+      await deleteUser(user.id);
+      onDelete(user.id);
+    } catch (error) {
+      console.error('Failed to delete user:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacak{user.name}// JSX kodu burada olacak
+      // JSX kodu burada olacak{user.email}// JSX kodu burada olacak
+      // JSX kodu burada olacak
+        {loading ? 'Deleting...' : 'Delete'}
+      // JSX kodu burada olacak
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+const useApi = () => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  
+  const makeRequest = async (requestFn) => {
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const result = await requestFn();
+      return result;
+    } catch (err) {
+      setError(err.message);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+  return { loading, error, makeRequest };
+};
+
+// Kullanım
+const UserManager = () => {
+  const [users, setUsers] = useState([]);
+  const { loading, error, makeRequest } = useApi();
+  
+  const loadUsers = async () => {
+    try {
+      const data = await makeRequest(() => fetch('/api/users').then(res => res.json()));
+      setUsers(data);
+    } catch (error) {
+      console.error('Failed to load users:', error);
+    }
+  };
+  
+  useEffect(() => {
+    loadUsers();
+  }, []);
+  
+  if (loading) return // JSX kodu burada olacakLoading...// JSX kodu burada olacak;
+  if (error) return // JSX kodu burada olacakError: {error}// JSX kodu burada olacak;
+  
+  return (
+    // JSX kodu burada olacak
+      {users.map(user => (
+        // JSX kodu burada olacak{user.name}// JSX kodu burada olacak
+      ))}
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+const apiClient = {
+  async request(url, options = {}) {
+    try {
+      const response = await fetch(url, {
+        headers: {
+          'Content-Type': 'application/json',
+          ...options.headers
+        },
+        ...options
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message // Tablo burada olacak \"string");
+      }
+      
+      return await response.json();
+    } catch (error) {
+      if (error.name === 'TypeError') {
+        throw new Error('Network error - please check your connection');
+      }
+      throw error;
+    }
+  },
+  
+  get(url) {
+    return this.request(url);
+  },
+  
+  post(url, data) {
+    return this.request(url, {
+      method: 'POST',
+      body: JSON.stringify(data)
+    });
+  },
+  
+  put(url, data) {
+    return this.request(url, {
+      method: 'PUT',
+      body: JSON.stringify(data)
+    });
+  },
+  
+  delete(url) {
+    return this.request(url, {
+      method: 'DELETE'
+    });
+  }
+};
+
+// Kullanım
+const UserService = {
+  async getUsers() {
+    return apiClient.get('/api/users');
+  },
+  
+  async createUser(userData) {
+    return apiClient.post('/api/users', userData);
+  },
+  
+  async updateUser(id, userData) {
+    return apiClient.put(\"string", userData);
+  },
+  
+  async deleteUser(id) {
+    return apiClient.delete(\"string");
+  }
+};
+\"string"\"string"\"string"javascript
+const useCancellableRequest = () => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  
+  const makeRequest = useCallback(async (requestFn) => {
+    const controller = new AbortController();
+    
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const result = await requestFn(controller.signal);
+      return result;
+    } catch (err) {
+      if (err.name === 'AbortError') {
+        console.log('Request was cancelled');
+        return;
+      }
+      setError(err.message);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+  
+  return { loading, error, makeRequest };
+};
+
+// Kullanım
+const SearchComponent = () => {
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
+  const { loading, error, makeRequest } = useCancellableRequest();
+  
+  const searchUsers = async (searchQuery, signal) => {
+    const response = await fetch(\"string", {
+      signal
+    });
+    return response.json();
+  };
+  
+  const handleSearch = async (searchQuery) => {
+    if (!searchQuery.trim()) {
+      setResults([]);
+      return;
+    }
+    
+    try {
+      const data = await makeRequest((signal) => searchUsers(searchQuery, signal));
+      setResults(data);
+    } catch (error) {
+      console.error('Search failed:', error);
+    }
+  };
+  
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      handleSearch(query);
+    }, 300);
+    
+    return () => clearTimeout(timeoutId);
+  }, [query]);
+  
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacak setQuery(e.target.value)}
+        placeholder="Search users..."
+      />
+      {loading && // JSX kodu burada olacakSearching...// JSX kodu burada olacak},
+      {error && // JSX kodu burada olacakError: {error}// JSX kodu burada olacak}
+      // JSX kodu burada olacak
+        {results.map(user => (
+          // JSX kodu burada olacak{user.name}// JSX kodu burada olacak
+        ))}
+      // JSX kodu burada olacak
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+// API service katmanı
+class ApiService {
+  constructor(baseURL) {
+    this.baseURL = baseURL;
+  }
+  
+  async request(endpoint, options = {}) {
+    const url = \"string";
+    
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+      },
+      ...options
+    };
+    
+    try {
+      const response = await fetch(url, config);
+      
+      if (!response.ok) {
+        throw new Error(\"string");
+      }
+      
+      return await response.json();
+    } catch (error) {
+      console.error('API request failed:', error);
+      throw error;
+    }
+  }
+  
+  get(endpoint) {
+    return this.request(endpoint);
+  }
+  
+  post(endpoint, data) {
+    return this.request(endpoint, {
+      method: 'POST',
+      body: JSON.stringify(data)
+    });
+  }
+  
+  put(endpoint, data) {
+    return this.request(endpoint, {
+      method: 'PUT',
+      body: JSON.stringify(data)
+    });
+  }
+  
+  delete(endpoint) {
+    return this.request(endpoint, {
+      method: 'DELETE'
+    });
+  }
+}
+
+// API instance
+const api = new ApiService('http://localhost:3001/api');
+
+// User service
+export const userService = {
+  getAll: () => api.get('/users'),
+  getById: (id) => api.get(\"string"),
+  create: (userData) => api.post('/users', userData),
+  update: (id, userData) => api.put(\"string", userData),
+  delete: (id) => api.delete(\"string")
+};
+\"string"\"string"\"string"javascript
+// Custom hook for API calls
+const useApi = (apiFunction, dependencies = []) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  
+  const execute = useCallback(async (...args) => {
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const result = await apiFunction(...args);
+      setData(result);
+      return result;
+    } catch (err) {
+      setError(err.message);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  }, dependencies);
+  
+  return { data, loading, error, execute };
+};
+
+// Kullanım
+const UserList = () => {
+  const { data: users, loading, error, execute: loadUsers } = useApi(userService.getAll);
+  
+  useEffect(() => {
+    loadUsers();
+  }, [loadUsers]);
+  
+  if (loading) return // JSX kodu burada olacakLoading...// JSX kodu burada olacak;
+  if (error) return // JSX kodu burada olacakError: {error}// JSX kodu burada olacak;
+  
+  return (
+    // JSX kodu burada olacak
+      {users?.map(user => (
+        // JSX kodu burada olacak{user.name}// JSX kodu burada olacak
+      ))}
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['api-app', 'crud-app', 'user-management'],
+            resources: [
+              {
+                id: 'fetch-api',
+                title: 'Fetch API',
+                url: 'https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'react-custom-hooks-olusturma',
+        name: 'REACT CUSTOM HOOKS OLUŞTURMA',
+        icon: '',
+        description: 'React custom hooks oluşturma ve kullanımı',
+        topics: [
+          {
+            id: 'custom-hook-olusturma',
+            title: 'Custom Hook Oluşturma',
+            description: 'React custom hooks oluşturma ve kullanımı',
+            duration: '5 dakika',
+            difficulty: 'medium',
+            content: "string", error);
+      return initialValue;
+    }
+  });
+  
+  const setValue = useCallback((value) => {
+    try {
+      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      setStoredValue(valueToStore);
+      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+    } catch (error) {
+      console.error(\"string", error);
+    }
+  }, [key, storedValue]);
+  
+  return [storedValue, setValue];
+};
+
+// Kullanım
+const Settings = () => {
+  const [theme, setTheme] = useLocalStorage('theme', 'light');
+  const [language, setLanguage] = useLocalStorage('language', 'en');
+  
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacakSettings// JSX kodu burada olacak
+      // JSX kodu burada olacak
+        // JSX kodu burada olacakTheme:// JSX kodu burada olacak
+        // JSX kodu burada olacak setTheme(e.target.value)}>
+          // JSX kodu burada olacakLight// JSX kodu burada olacak
+          // JSX kodu burada olacakDark// JSX kodu burada olacak
+        // JSX kodu burada olacak
+      // JSX kodu burada olacak
+      // JSX kodu burada olacak
+        // JSX kodu burada olacakLanguage:// JSX kodu burada olacak
+        // JSX kodu burada olacak setLanguage(e.target.value)}>
+          // JSX kodu burada olacakEnglish// JSX kodu burada olacak
+          // JSX kodu burada olacakTürkçe// JSX kodu burada olacak
+        // JSX kodu burada olacak
+      // JSX kodu burada olacak
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+// useToggle custom hook
+const useToggle = (initialValue = false) => {
+  const [value, setValue] = useState(initialValue);
+  
+  const toggle = useCallback(() => {
+    setValue(prev => !prev);
+  }, []);
+  
+  const setTrue = useCallback(() => {
+    setValue(true);
+  }, []);
+  
+  const setFalse = useCallback(() => {
+    setValue(false);
+  }, []);
+  
+  return [value, { toggle, setTrue, setFalse }];
+};
+
+// Kullanım
+const Modal = () => {
+  const [isOpen, { toggle, setFalse }] = useToggle(false);
+  
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacak
+        {isOpen ? 'Close' : 'Open'} Modal
+      // JSX kodu burada olacak
+      
+      {isOpen && (
+        // JSX kodu burada olacak
+          // JSX kodu burada olacakModal Content// JSX kodu burada olacak
+          // JSX kodu burada olacakClose// JSX kodu burada olacak
+        // JSX kodu burada olacak
+      )}
+    // JSX kodu burada olacak
+  );
+};
+
+const ToggleButton = () => {
+  const [isOn, { toggle }] = useToggle(false);
+  
+  return (
+    // JSX kodu burada olacak
+      {isOn ? 'ON' : 'OFF'}
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+// useApi custom hook
+const useApi = (apiFunction, dependencies = []) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  
+  const execute = useCallback(async (...args) => {
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const result = await apiFunction(...args);
+      setData(result);
+      return result;
+    } catch (err) {
+      setError(err.message);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  }, dependencies);
+  
+  return { data, loading, error, execute };
+};
+
+// Kullanım
+const UserList = () => {
+  const { data: users, loading, error, execute: loadUsers } = useApi(
+    () => fetch('/api/users').then(res => res.json())
+  );
+  
+  useEffect(() => {
+    loadUsers();
+  }, [loadUsers]);
+  
+  if (loading) return // JSX kodu burada olacakLoading...// JSX kodu burada olacak;
+  if (error) return // JSX kodu burada olacakError: {error}// JSX kodu burada olacak;
+  
+  return (
+    // JSX kodu burada olacak
+      {users?.map(user => (
+        // JSX kodu burada olacak{user.name}// JSX kodu burada olacak
+      ))}
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+// useDebounce custom hook
+const useDebounce = (value, delay) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+    
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+  
+  return debouncedValue;
+};
+
+// Kullanım
+const SearchInput = () => {
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
+  const debouncedQuery = useDebounce(query, 300);
+  
+  useEffect(() => {
+    if (debouncedQuery) {
+      // API çağrısı yap
+      fetch(\"string")
+        .then(res => res.json())
+        .then(data => setResults(data))
+        .catch(err => console.error('Search error:', err));
+    } else {
+      setResults([]);
+    }
+  }, [debouncedQuery]);
+  
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacak setQuery(e.target.value)}
+        placeholder="Search..."
+      />
+      // JSX kodu burada olacak
+        {results.map(result => (
+          // JSX kodu burada olacak{result.title}// JSX kodu burada olacak
+        ))}
+      // JSX kodu burada olacak
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+// usePrevious custom hook
+const usePrevious = (value) => {
+  const ref = useRef();
+  
+  useEffect(() => {
+    ref.current = value;
+  });
+  
+  return ref.current;
+};
+
+// Kullanım
+const CounterWithPrevious = () => {
+  const [count, setCount] = useState(0);
+  const prevCount = usePrevious(count);
+  
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacakCurrent: {count}// JSX kodu burada olacak
+      // JSX kodu burada olacakPrevious: {prevCount}// JSX kodu burada olacak
+      // JSX kodu burada olacak setCount(count + 1)}>Increment// JSX kodu burada olacak
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+// useWindowSize custom hook
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
+  return windowSize;
+};
+
+// Kullanım
+const ResponsiveComponent = () => {
+  const { width, height } = useWindowSize();
+  
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacakWindow Size// JSX kodu burada olacak
+      // JSX kodu burada olacakWidth: {width}px// JSX kodu burada olacak
+      // JSX kodu burada olacakHeight: {height}px// JSX kodu burada olacak
+      {width // JSX kodu burada olacakMobile view// JSX kodu burada olacak
+      ) : (
+        // JSX kodu burada olacakDesktop view// JSX kodu burada olacak
+      )}
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string"\"string"javascript
+//  İyi: Tek sorumluluk
+const useCounter = (initialValue = 0) => {
+  const [count, setCount] = useState(initialValue);
+  
+  const increment = useCallback(() => setCount(prev => prev + 1), []);
+  const decrement = useCallback(() => setCount(prev => prev - 1), []);
+  
+  return { count, increment, decrement };
+};
+
+//  Kötü: Çok fazla sorumluluk
+const useEverything = () => {
+  const [count, setCount] = useState(0);
+  const [user, setUser] = useState(null);
+  const [theme, setTheme] = useState('light');
+  // ... çok fazla state ve logic
+};
+\"string"\"string"\"string"javascript
+//  İyi: Optimize edilmiş
+const useOptimizedCounter = (initialValue = 0) => {
+  const [count, setCount] = useState(initialValue);
+  
+  const increment = useCallback(() => {
+    setCount(prev => prev + 1);
+  }, []);
+  
+  const decrement = useCallback(() => {
+    setCount(prev => prev - 1);
+  }, []);
+  
+  const isEven = useMemo(() => count % 2 === 0, [count]);
+  
+  return { count, increment, decrement, isEven };
+};
+\"string"\"string"\"string"javascript
+//  İyi: Error handling ile
+const useApiWithErrorHandling = (apiFunction) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  
+  const execute = useCallback(async (...args) => {
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const result = await apiFunction(...args);
+      setData(result);
+      return result;
+    } catch (err) {
+      const errorMessage = err.message // Tablo burada olacak 'An error occurred';
+      setError(errorMessage);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  }, [apiFunction]);
+  
+  return { data, loading, error, execute };
+};
+\"string"\"string"\"string"typescript
+// TypeScript ile custom hook
+interface UseCounterReturn {
+  count: number;
+  increment: () => void;
+  decrement: () => void;
+  reset: () => void;
+}
+
+const useCounter = (initialValue: number = 0): UseCounterReturn => {
+  const [count, setCount] = useState// JSX kodu burada olacak(initialValue);
+  
+  const increment = useCallback(() => {
+    setCount(prev => prev + 1);
+  }, []);
+  
+  const decrement = useCallback(() => {
+    setCount(prev => prev - 1);
+  }, []);
+  
+  const reset = useCallback(() => {
+    setCount(initialValue);
+  }, [initialValue]);
+  
+  return { count, increment, decrement, reset };
+};
+\"string"\"string"\"string"javascript
+// useForm custom hook
+const useForm = (initialValues = {}) => {
+  const [values, setValues] = useState(initialValues);
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+  
+  const setValue = useCallback((name, value) => {
+    setValues(prev => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  }, [errors]);
+  
+  const setFieldTouched = useCallback((name) => {
+    setTouched(prev => ({ ...prev, [name]: true }));
+  }, []);
+  
+  const validate = useCallback((validationRules) => {
+    const newErrors = {};
+    
+    Object.keys(validationRules).forEach(field => {
+      const rule = validationRules[field];
+      const value = values[field];
+      
+      if (rule.required && !value) {
+        newErrors[field] = rule.message // Tablo burada olacak \"string";
+      } else if (rule.pattern && !rule.pattern.test(value)) {
+        newErrors[field] = rule.message // Tablo burada olacak \"string";
+      }
+    });
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  }, [values]);
+  
+  const reset = useCallback(() => {
+    setValues(initialValues);
+    setErrors({});
+    setTouched({});
+  }, [initialValues]);
+  
+  return {
+    values,
+    errors,
+    touched,
+    setValue,
+    setFieldTouched,
+    validate,
+    reset
+  };
+};
+
+// Kullanım
+const ContactForm = () => {
+  const { values, errors, touched, setValue, setFieldTouched, validate, reset } = useForm({
+    name: '',
+    email: '',
+    message: ''
+  });
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    const isValid = validate({
+      name: { required: true, message: 'Name is required' },
+      email: { 
+        required: true, 
+        pattern: /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/,
+        message: 'Email is invalid' 
+      },
+      message: { required: true, message: 'Message is required' }
+    });
+    
+    if (isValid) {
+      console.log('Form submitted:', values);
+      reset();
+    }
+  };
+  
+  return (
+    // JSX kodu burada olacak
+      // JSX kodu burada olacak
+        // JSX kodu burada olacak setValue('name', e.target.value)}
+          onBlur={() => setFieldTouched('name')}
+          placeholder="Name"
+        />
+        {touched.name && errors.name && // JSX kodu burada olacak{errors.name}// JSX kodu burada olacak}
+      // JSX kodu burada olacak
+      
+      // JSX kodu burada olacak
+        // JSX kodu burada olacak setValue('email', e.target.value)}
+          onBlur={() => setFieldTouched('email')}
+          placeholder="Email"
+        />
+        {touched.email && errors.email && // JSX kodu burada olacak{errors.email}// JSX kodu burada olacak}
+      // JSX kodu burada olacak
+      
+      // JSX kodu burada olacak
+        // JSX kodu burada olacak setValue('message', e.target.value)}
+          onBlur={() => setFieldTouched('message')}
+          placeholder="Message"
+        />
+        {touched.message && errors.message && // JSX kodu burada olacak{errors.message}// JSX kodu burada olacak}
+      // JSX kodu burada olacak
+      
+      // JSX kodu burada olacakSubmit// JSX kodu burada olacak
+    // JSX kodu burada olacak
+  );
+};
+\"string"\"string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['custom-hooks-app', 'form-app', 'api-app'],
+            resources: [
+              {
+                id: 'react-custom-hooks',
+                title: 'React Custom Hooks',
+                url: 'https://react.dev/learn/reusing-logic-with-custom-hooks',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'redux-ile-state-management',
+        name: 'REDUX İLE STATE MANAGEMENT',
+        icon: '',
+        description: 'Redux ile global state yönetimi',
+        topics: [
+          {
+            id: 'redux-nedir',
+            title: 'Redux Nedir?',
+            description: 'Redux state management kütüphanesi ve temel kavramları',
+            duration: '7 dakika',
+            difficulty: 'hard',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['redux-app', 'todo-redux-app', 'ecommerce-redux'],
+            resources: [
+              {
+                id: 'redux-docs',
+                title: 'Redux Documentation',
+                url: 'https://redux.js.org/',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'react-router-ile-multi-page-spa',
+        name: 'REACT ROUTER İLE MULTİ PAGE SPA',
+        icon: '️',
+        description: 'React Router ile single page application routing',
+        topics: [
+          {
+            id: 'single-page-application-ve-react-multi-page',
+            title: 'Single-Page Application ve React Multi-Page',
+            description: 'SPA kavramı ve React Router ile sayfa yönlendirme',
+            duration: '9 dakika',
+            difficulty: 'medium',
+            content: "string",
+            codeExamples: [
+              {
+                id: 'basic-example',
+                title: 'Temel Örnek',
+                code: '// Bu konu için temel örnek kod burada olacak',
+                language: 'javascript',
+                description: 'Bu konunun temel kullanımını gösteren örnek'
+              }
+            ],
+            relatedProjects: ['spa-app', 'ecommerce-router', 'admin-panel'],
+            resources: [
+              {
+                id: 'react-router-docs',
+                title: 'React Router Documentation',
+                url: 'https://reactrouter.com/',
+                type: 'documentation'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+];
+
+export default roadmapData;

@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" class="w-full h-auto max-w-4xl mx-auto">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#61dafb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#21759b;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#282c34;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1f26;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffa500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6b35;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+    
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#secondaryGradient)" opacity="0.1"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" fill="url(#primaryGradient)" font-size="28" font-weight="bold" font-family="Arial, sans-serif">
+    React Geliştirme Süreci
+  </text>
+  
+  <!-- Step 1: Prerequisites -->
+  <g class="step-group" transform="translate(50, 100)">
+    <rect x="0" y="0" width="200" height="120" rx="15" fill="url(#accentGradient)" filter="url(#shadow)"/>
+    <text x="100" y="25" text-anchor="middle" fill="white" font-size="14" font-weight="bold">1. Ön Koşullar</text>
+    <text x="20" y="45" fill="white" font-size="11">• HTML/CSS</text>
+    <text x="20" y="60" fill="white" font-size="11">• JavaScript ES6+</text>
+    <text x="20" y="75" fill="white" font-size="11">• Git</text>
+    <text x="20" y="90" fill="white" font-size="11">• Terminal/CMD</text>
+    <text x="20" y="105" fill="white" font-size="11">• Text Editor</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M 270 160 L 330 160" stroke="url(#primaryGradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 2: Development Environment -->
+  <g class="step-group" transform="translate(350, 100)">
+    <rect x="0" y="0" width="200" height="120" rx="15" fill="url(#primaryGradient)" filter="url(#shadow)"/>
+    <text x="100" y="25" text-anchor="middle" fill="white" font-size="14" font-weight="bold">2. Geliştirme Ortamı</text>
+    <text x="20" y="45" fill="white" font-size="11">• Node.js Kurulumu</text>
+    <text x="20" y="60" fill="white" font-size="11">• NPM/Yarn</text>
+    <text x="20" y="75" fill="white" font-size="11">• VS Code</text>
+    <text x="20" y="90" fill="white" font-size="11">• React DevTools</text>
+    <text x="20" y="105" fill="white" font-size="11">• Git Konfigürasyonu</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M 570 160 L 630 160" stroke="url(#primaryGradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 3: Create React App -->
+  <g class="step-group" transform="translate(650, 100)">
+    <rect x="0" y="0" width="200" height="120" rx="15" fill="url(#accentGradient)" filter="url(#shadow)"/>
+    <text x="100" y="25" text-anchor="middle" fill="white" font-size="14" font-weight="bold">3. İlk Proje</text>
+    <text x="20" y="45" fill="white" font-size="11">• Create React App</text>
+    <text x="20" y="60" fill="white" font-size="11">• npx create-react-app</text>
+    <text x="20" y="75" fill="white" font-size="11">• Proje Yapısı</text>
+    <text x="20" y="90" fill="white" font-size="11">• npm start</text>
+    <text x="20" y="105" fill="white" font-size="11">• localhost:3000</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M 870 160 L 930 160" stroke="url(#primaryGradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 4: React Basics -->
+  <g class="step-group" transform="translate(950, 100)">
+    <rect x="0" y="0" width="200" height="120" rx="15" fill="url(#primaryGradient)" filter="url(#shadow)"/>
+    <text x="100" y="25" text-anchor="middle" fill="white" font-size="14" font-weight="bold">4. React Temelleri</text>
+    <text x="20" y="45" fill="white" font-size="11">• JSX Syntax</text>
+    <text x="20" y="60" fill="white" font-size="11">• Components</text>
+    <text x="20" y="75" fill="white" font-size="11">• Props</text>
+    <text x="20" y="90" fill="white" font-size="11">• State</text>
+    <text x="20" y="105" fill="white" font-size="11">• Event Handling</text>
+  </g>
+
+  <!-- Curved Arrow Down -->
+  <path d="M 1050 240 Q 1050 280 1000 300 Q 950 320 900 300 Q 850 280 850 320 L 850 360" 
+        stroke="url(#primaryGradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 5: Advanced Concepts -->
+  <g class="step-group" transform="translate(750, 380)">
+    <rect x="0" y="0" width="200" height="120" rx="15" fill="url(#accentGradient)" filter="url(#shadow)"/>
+    <text x="100" y="25" text-anchor="middle" fill="white" font-size="14" font-weight="bold">5. İleri Konular</text>
+    <text x="20" y="45" fill="white" font-size="11">• React Hooks</text>
+    <text x="20" y="60" fill="white" font-size="11">• Context API</text>
+    <text x="20" y="75" fill="white" font-size="11">• React Router</text>
+    <text x="20" y="90" fill="white" font-size="11">• State Management</text>
+    <text x="20" y="105" fill="white" font-size="11">• Performance</text>
+  </g>
+
+  <!-- Arrow Left -->
+  <path d="M 730 440 L 670 440" stroke="url(#primaryGradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 6: Testing -->
+  <g class="step-group" transform="translate(450, 380)">
+    <rect x="0" y="0" width="200" height="120" rx="15" fill="url(#primaryGradient)" filter="url(#shadow)"/>
+    <text x="100" y="25" text-anchor="middle" fill="white" font-size="14" font-weight="bold">6. Test & Debug</text>
+    <text x="20" y="45" fill="white" font-size="11">• Jest</text>
+    <text x="20" y="60" fill="white" font-size="11">• React Testing Library</text>
+    <text x="20" y="75" fill="white" font-size="11">• DevTools</text>
+    <text x="20" y="90" fill="white" font-size="11">• Error Boundaries</text>
+    <text x="20" y="105" fill="white" font-size="11">• Performance Profiler</text>
+  </g>
+
+  <!-- Arrow Left -->
+  <path d="M 430 440 L 370 440" stroke="url(#primaryGradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 7: Build & Deploy -->
+  <g class="step-group" transform="translate(150, 380)">
+    <rect x="0" y="0" width="200" height="120" rx="15" fill="url(#accentGradient)" filter="url(#shadow)"/>
+    <text x="100" y="25" text-anchor="middle" fill="white" font-size="14" font-weight="bold">7. Build & Deploy</text>
+    <text x="20" y="45" fill="white" font-size="11">• npm run build</text>
+    <text x="20" y="60" fill="white" font-size="11">• Optimizasyon</text>
+    <text x="20" y="75" fill="white" font-size="11">• Netlify/Vercel</text>
+    <text x="20" y="90" fill="white" font-size="11">• GitHub Pages</text>
+    <text x="20" y="105" fill="white" font-size="11">• CI/CD Pipeline</text>
+  </g>
+
+  <!-- Central React Logo -->
+  <g transform="translate(500, 280)">
+    <circle cx="100" cy="60" r="80" fill="url(#primaryGradient)" opacity="0.1" filter="url(#glow)"/>
+    <circle cx="100" cy="60" r="60" fill="none" stroke="url(#primaryGradient)" stroke-width="2"/>
+    <circle cx="100" cy="60" r="40" fill="none" stroke="url(#primaryGradient)" stroke-width="2" transform="rotate(60 100 60)"/>
+    <circle cx="100" cy="60" r="40" fill="none" stroke="url(#primaryGradient)" stroke-width="2" transform="rotate(-60 100 60)"/>
+    <circle cx="100" cy="60" r="8" fill="url(#primaryGradient)"/>
+    <text x="100" y="150" text-anchor="middle" fill="url(#primaryGradient)" font-size="16" font-weight="bold">React.js</text>
+    <text x="100" y="170" text-anchor="middle" fill="#666" font-size="12">Journey</text>
+  </g>
+
+  <!-- Tools Section -->
+  <g transform="translate(50, 600)">
+    <text x="0" y="20" fill="url(#primaryGradient)" font-size="18" font-weight="bold">Gerekli Araçlar:</text>
+    
+    <!-- Tool Icons -->
+    <g transform="translate(0, 40)">
+      <!-- Node.js -->
+      <rect x="0" y="0" width="80" height="60" rx="8" fill="#68a063" filter="url(#shadow)"/>
+      <text x="40" y="25" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Node.js</text>
+      <text x="40" y="40" text-anchor="middle" fill="white" font-size="8">Runtime</text>
+      <text x="40" y="52" text-anchor="middle" fill="white" font-size="8">Environment</text>
+    </g>
+    
+    <g transform="translate(100, 40)">
+      <!-- VS Code -->
+      <rect x="0" y="0" width="80" height="60" rx="8" fill="#007acc" filter="url(#shadow)"/>
+      <text x="40" y="25" text-anchor="middle" fill="white" font-size="10" font-weight="bold">VS Code</text>
+      <text x="40" y="40" text-anchor="middle" fill="white" font-size="8">Code</text>
+      <text x="40" y="52" text-anchor="middle" fill="white" font-size="8">Editor</text>
+    </g>
+    
+    <g transform="translate(200, 40)">
+      <!-- Git -->
+      <rect x="0" y="0" width="80" height="60" rx="8" fill="#f05032" filter="url(#shadow)"/>
+      <text x="40" y="25" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Git</text>
+      <text x="40" y="40" text-anchor="middle" fill="white" font-size="8">Version</text>
+      <text x="40" y="52" text-anchor="middle" fill="white" font-size="8">Control</text>
+    </g>
+    
+    <g transform="translate(300, 40)">
+      <!-- NPM -->
+      <rect x="0" y="0" width="80" height="60" rx="8" fill="#cb3837" filter="url(#shadow)"/>
+      <text x="40" y="25" text-anchor="middle" fill="white" font-size="10" font-weight="bold">NPM</text>
+      <text x="40" y="40" text-anchor="middle" fill="white" font-size="8">Package</text>
+      <text x="40" y="52" text-anchor="middle" fill="white" font-size="8">Manager</text>
+    </g>
+  </g>
+
+  <!-- Learning Path -->
+  <g transform="translate(600, 600)">
+    <text x="0" y="20" fill="url(#primaryGradient)" font-size="18" font-weight="bold">Öğrenme Süreci:</text>
+    
+    <g transform="translate(0, 40)">
+      <!-- Beginner -->
+      <circle cx="30" cy="15" r="12" fill="url(#accentGradient)"/>
+      <text x="30" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold">1</text>
+      <text x="50" y="12" fill="#333" font-size="12">Başlangıç (1-2 hafta)</text>
+      <text x="50" y="25" fill="#666" font-size="10">HTML, CSS, JavaScript temelleri</text>
+    </g>
+    
+    <g transform="translate(0, 70)">
+      <!-- Intermediate -->
+      <circle cx="30" cy="15" r="12" fill="url(#primaryGradient)"/>
+      <text x="30" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold">2</text>
+      <text x="50" y="12" fill="#333" font-size="12">Orta Seviye (2-4 hafta)</text>
+      <text x="50" y="25" fill="#666" font-size="10">React temelleri, hooks, routing</text>
+    </g>
+    
+    <g transform="translate(0, 100)">
+      <!-- Advanced -->
+      <circle cx="30" cy="15" r="12" fill="url(#secondaryGradient)"/>
+      <text x="30" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold">3</text>
+      <text x="50" y="12" fill="#333" font-size="12">İleri Seviye (4+ hafta)</text>
+      <text x="50" y="25" fill="#666" font-size="10">State management, testing, deployment</text>
+    </g>
+  </g>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="url(#primaryGradient)"/>
+    </marker>
+  </defs>
+
+  <!-- Responsive text for mobile -->
+  <style>
+    @media (max-width: 768px) {
+      .step-group text { font-size: 9px; }
+      .step-group rect { width: 160px; height: 100px; }
+    }
+    
+    @media (max-width: 480px) {
+      .step-group text { font-size: 8px; }
+      .step-group rect { width: 140px; height: 90px; }
+    }
+  </style>
+</svg>
