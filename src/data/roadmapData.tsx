@@ -447,7 +447,6 @@ Uygulamayi kucuk parcalara boler.
 import React, { memo } from 'react';
 
 const ExpensiveComponent = memo(({ data }) => {
-  // Ağır hesaplamalar
   const processedData = data.map(item => ({
     ...item,
     processed: true

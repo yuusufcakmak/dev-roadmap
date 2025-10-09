@@ -1,15 +1,15 @@
-import { Category } from '../../../types/roadmap';
+import { Category } from "../../../types/roadmap";
 
 export const sideEffects: Category = {
-  id: 'side-effects',
-  name: 'SIDE EFFECTS KULLANIMI',
-  icon: '🔄',
-  description: 'React\'te side effects ve useEffect hook kullanımı',
+  id: "side-effects",
+  name: "SIDE EFFECTS KULLANIMI",
+  icon: "🔄",
+  description: "React'te side effects ve useEffect hook kullanımı",
   topics: [
     {
-      id: 'side-effects-concept',
-      title: 'Side Effects Nedir?',
-      description: 'React\'te side effects kavramı ve kullanımı',
+      id: "side-effects-concept",
+      title: "Side Effects Nedir?",
+      description: "React'te side effects kavramı ve kullanımı",
       content: `Side Effects Nedir?
 
 Side effects, component'in render döngüsü dışında gerçekleşen işlemlerdir. Modern React geliştirmede side effects kavramı ve en iyi uygulamaları öğrenin.
@@ -60,32 +60,36 @@ Zamanlayıcılarda
 Event listener'larda
 Subscription'larda`,
       codeExamples: [],
-      relatedProjects: ['api-integration', 'timer-app', 'side-effects-management'],
+      relatedProjects: [
+        "api-integration",
+        "timer-app",
+        "side-effects-management",
+      ],
       resources: [
         {
-          id: 'side-effects-docs',
-          title: 'React.dev - Side Effects Dokümantasyonu',
-          url: 'https://react.dev/learn/synchronizing-with-effects',
-          type: 'documentation'
+          id: "side-effects-docs",
+          title: "React.dev - Side Effects Dokümantasyonu",
+          url: "https://react.dev/learn/synchronizing-with-effects",
+          type: "documentation",
         },
         {
-          id: 'side-effects-guide',
-          title: 'React Side Effects Kılavuzu',
-          url: 'https://react.dev/learn/synchronizing-with-effects',
-          type: 'tutorial'
+          id: "side-effects-guide",
+          title: "React Side Effects Kılavuzu",
+          url: "https://react.dev/learn/synchronizing-with-effects",
+          type: "tutorial",
         },
         {
-          id: 'side-effects-patterns',
-          title: 'React Side Effects Desenleri',
-          url: 'https://react.dev/learn/synchronizing-with-effects',
-          type: 'article'
-        }
-      ]
+          id: "side-effects-patterns",
+          title: "React Side Effects Desenleri",
+          url: "https://react.dev/learn/synchronizing-with-effects",
+          type: "article",
+        },
+      ],
     },
     {
-      id: 'useeffect-hook',
-      title: 'useEffect Nedir?',
-      description: 'useEffect hook ile side effects yönetimi',
+      id: "useeffect-hook",
+      title: "useEffect Nedir?",
+      description: "useEffect hook ile side effects yönetimi",
       content: `useEffect Nedir?
 
 useEffect, React'te side effects yönetimi için kullanılan hook'tur. Modern React geliştirmede useEffect hook kullanımı ve en iyi uygulamaları öğrenin.
@@ -109,9 +113,7 @@ Bir blog uygulaması geliştirdiğinizi düşünün:
 useEffect Syntax
 
 useEffect(() => {
-  // Side effect kodları
   return () => {
-    // Cleanup kodları
   };
 }, [dependencies]);
 
@@ -139,32 +141,32 @@ Subscription'larda
 Timer'larda
 Event listener'larda`,
       codeExamples: [],
-      relatedProjects: ['data-fetching', 'timer-app', 'useeffect-patterns'],
+      relatedProjects: ["data-fetching", "timer-app", "useeffect-patterns"],
       resources: [
         {
-          id: 'useeffect-docs',
-          title: 'React.dev - useEffect Dokümantasyonu',
-          url: 'https://react.dev/reference/react/useEffect',
-          type: 'documentation'
+          id: "useeffect-docs",
+          title: "React.dev - useEffect Dokümantasyonu",
+          url: "https://react.dev/reference/react/useEffect",
+          type: "documentation",
         },
         {
-          id: 'useeffect-guide',
-          title: 'useEffect Hook Kılavuzu',
-          url: 'https://react.dev/reference/react/useEffect',
-          type: 'tutorial'
+          id: "useeffect-guide",
+          title: "useEffect Hook Kılavuzu",
+          url: "https://react.dev/reference/react/useEffect",
+          type: "tutorial",
         },
         {
-          id: 'useeffect-patterns',
-          title: 'useEffect Hook Desenleri',
-          url: 'https://react.dev/reference/react/useEffect',
-          type: 'article'
-        }
-      ]
+          id: "useeffect-patterns",
+          title: "useEffect Hook Desenleri",
+          url: "https://react.dev/reference/react/useEffect",
+          type: "article",
+        },
+      ],
     },
     {
-      id: 'useeffect-dependencies',
-      title: 'useEffect ve Dependencies',
-      description: 'useEffect dependency array kullanımı',
+      id: "useeffect-dependencies",
+      title: "useEffect ve Dependencies",
+      description: "useEffect dependency array kullanımı",
       content: `useEffect ve Dependencies
 
 useEffect dependency array'i, hook'un ne zaman çalışacağını kontrol eder. Modern React geliştirmede dependency array kullanımı ve en iyi uygulamaları öğrenin.
@@ -214,32 +216,36 @@ Props değişikliklerinde
 Timer'larda
 Event listener'larda`,
       codeExamples: [],
-      relatedProjects: ['optimized-effects', 'dependency-management', 'useeffect-optimization'],
+      relatedProjects: [
+        "optimized-effects",
+        "dependency-management",
+        "useeffect-optimization",
+      ],
       resources: [
         {
-          id: 'useeffect-dependencies-docs',
-          title: 'React.dev - useEffect Dependencies Dokümantasyonu',
-          url: 'https://react.dev/reference/react/useEffect#specifying-reactive-dependencies',
-          type: 'documentation'
+          id: "useeffect-dependencies-docs",
+          title: "React.dev - useEffect Dependencies Dokümantasyonu",
+          url: "https://react.dev/reference/react/useEffect#specifying-reactive-dependencies",
+          type: "documentation",
         },
         {
-          id: 'dependency-array-guide',
-          title: 'useEffect Dependency Array Kılavuzu',
-          url: 'https://react.dev/reference/react/useEffect#specifying-reactive-dependencies',
-          type: 'tutorial'
+          id: "dependency-array-guide",
+          title: "useEffect Dependency Array Kılavuzu",
+          url: "https://react.dev/reference/react/useEffect#specifying-reactive-dependencies",
+          type: "tutorial",
         },
         {
-          id: 'dependency-optimization',
-          title: 'useEffect Dependency Optimizasyonu',
-          url: 'https://react.dev/reference/react/useEffect#specifying-reactive-dependencies',
-          type: 'article'
-        }
-      ]
+          id: "dependency-optimization",
+          title: "useEffect Dependency Optimizasyonu",
+          url: "https://react.dev/reference/react/useEffect#specifying-reactive-dependencies",
+          type: "article",
+        },
+      ],
     },
     {
-      id: 'useeffect-cleanup',
-      title: 'useEffect Cleanup Fonksiyonu Kullanımı',
-      description: 'useEffect cleanup fonksiyonu ile temizlik işlemleri',
+      id: "useeffect-cleanup",
+      title: "useEffect Cleanup Fonksiyonu Kullanımı",
+      description: "useEffect cleanup fonksiyonu ile temizlik işlemleri",
       content: `useEffect Cleanup Fonksiyonu Kullanımı
 
 useEffect cleanup fonksiyonu, side effects'lerin temizlenmesi için kullanılır. Modern React geliştirmede cleanup fonksiyonu kullanımı ve en iyi uygulamaları öğrenin.
@@ -291,32 +297,32 @@ Subscription'larda
 API çağrılarında
 DOM manipülasyonunda`,
       codeExamples: [],
-      relatedProjects: ['timer-cleanup', 'event-cleanup', 'cleanup-patterns'],
+      relatedProjects: ["timer-cleanup", "event-cleanup", "cleanup-patterns"],
       resources: [
         {
-          id: 'useeffect-cleanup-docs',
-          title: 'React.dev - useEffect Cleanup Dokümantasyonu',
-          url: 'https://react.dev/reference/react/useEffect#cleaning-up-an-effect',
-          type: 'documentation'
+          id: "useeffect-cleanup-docs",
+          title: "React.dev - useEffect Cleanup Dokümantasyonu",
+          url: "https://react.dev/reference/react/useEffect#cleaning-up-an-effect",
+          type: "documentation",
         },
         {
-          id: 'cleanup-functions-guide',
-          title: 'useEffect Cleanup Functions Kılavuzu',
-          url: 'https://react.dev/reference/react/useEffect#cleaning-up-an-effect',
-          type: 'tutorial'
+          id: "cleanup-functions-guide",
+          title: "useEffect Cleanup Functions Kılavuzu",
+          url: "https://react.dev/reference/react/useEffect#cleaning-up-an-effect",
+          type: "tutorial",
         },
         {
-          id: 'memory-leak-prevention',
-          title: 'React Memory Leak Önleme',
-          url: 'https://react.dev/reference/react/useEffect#cleaning-up-an-effect',
-          type: 'article'
-        }
-      ]
+          id: "memory-leak-prevention",
+          title: "React Memory Leak Önleme",
+          url: "https://react.dev/reference/react/useEffect#cleaning-up-an-effect",
+          type: "article",
+        },
+      ],
     },
     {
-      id: 'useeffect-summary',
-      title: 'useEffect Özet',
-      description: 'useEffect hook kullanımının özeti',
+      id: "useeffect-summary",
+      title: "useEffect Özet",
+      description: "useEffect hook kullanımının özeti",
       content: `useEffect Özet
 
 useEffect hook'unun temel kullanımını özetleyelim. Modern React geliştirmede useEffect hook özeti ve en iyi uygulamaları öğrenin.
@@ -359,27 +365,31 @@ Timer'larda
 Event listener'larda
 Subscription'larda`,
       codeExamples: [],
-      relatedProjects: ['useeffect-practice', 'side-effects-mastery', 'useeffect-complete-guide'],
+      relatedProjects: [
+        "useeffect-practice",
+        "side-effects-mastery",
+        "useeffect-complete-guide",
+      ],
       resources: [
         {
-          id: 'useeffect-summary-docs',
-          title: 'React.dev - useEffect Özet Dokümantasyonu',
-          url: 'https://react.dev/learn/synchronizing-with-effects',
-          type: 'documentation'
+          id: "useeffect-summary-docs",
+          title: "React.dev - useEffect Özet Dokümantasyonu",
+          url: "https://react.dev/learn/synchronizing-with-effects",
+          type: "documentation",
         },
         {
-          id: 'useeffect-complete-guide',
-          title: 'useEffect Tam Kılavuzu',
-          url: 'https://react.dev/learn/synchronizing-with-effects',
-          type: 'tutorial'
+          id: "useeffect-complete-guide",
+          title: "useEffect Tam Kılavuzu",
+          url: "https://react.dev/learn/synchronizing-with-effects",
+          type: "tutorial",
         },
         {
-          id: 'useeffect-best-practices',
-          title: 'useEffect Best Practices',
-          url: 'https://react.dev/learn/synchronizing-with-effects',
-          type: 'article'
-        }
-      ]
-    }
-  ]
+          id: "useeffect-best-practices",
+          title: "useEffect Best Practices",
+          url: "https://react.dev/learn/synchronizing-with-effects",
+          type: "article",
+        },
+      ],
+    },
+  ],
 };

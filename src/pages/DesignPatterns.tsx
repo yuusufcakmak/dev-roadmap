@@ -150,8 +150,8 @@ const DesignPatterns: React.FC = () => {
       : patterns.filter((pattern) => pattern.category === selectedPattern);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+    <div className="min-h-screen brand-section">
+      <div className="bg-white dark:bg-secondary-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -159,10 +159,10 @@ const DesignPatterns: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 brand-h">
               React Design Patterns
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl brand-sub max-w-3xl mx-auto">
               React uygulamalarında kullanılan temel tasarım desenlerini
               keşfedin. Her pattern'in ne zaman ve nasıl kullanılacağını
               öğrenin.
@@ -184,7 +184,7 @@ const DesignPatterns: React.FC = () => {
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                   selectedPattern === category.id
                     ? "bg-primary-500 text-white shadow-lg"
-                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-600"
+                    : "bg-white dark:bg-secondary-800 text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-secondary-700 border border-gray-200 dark:border-gray-600"
                 }`}
               >
                 <Icon size={16} />
@@ -202,7 +202,7 @@ const DesignPatterns: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full flex flex-col"
+                className="bg-white dark:bg-secondary-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full flex flex-col"
               >
                 <div
                   className={`bg-gradient-to-r ${pattern.color} p-6 text-white`}
@@ -226,7 +226,7 @@ const DesignPatterns: React.FC = () => {
                       {pattern.useCases.map((useCase) => (
                         <span
                           key={useCase}
-                          className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-full"
+                          className="px-2 py-1 bg-gray-100 dark:bg-secondary-700 text-gray-700 dark:text-white text-xs rounded-full"
                         >
                           {useCase}
                         </span>
@@ -239,7 +239,7 @@ const DesignPatterns: React.FC = () => {
                       <FaCode size={16} className="text-blue-500" />
                       Örnekler
                     </h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-700 p-2 rounded">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-secondary-700 p-2 rounded">
                       {pattern.example}
                     </p>
                   </div>
@@ -274,7 +274,7 @@ const DesignPatterns: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="px-6 py-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-600">
+                <div className="px-6 py-4 bg-gray-50 dark:bg-secondary-700 border-t border-gray-200 dark:border-gray-600">
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-gray-500 dark:text-gray-400">
                       {pattern.category}
@@ -324,7 +324,7 @@ const DesignPatterns: React.FC = () => {
           })}
         </div>
       </div>
-      <div className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+      <div className="bg-white dark:bg-secondary-800 border-t border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

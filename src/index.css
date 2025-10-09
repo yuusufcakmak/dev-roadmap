@@ -4,6 +4,25 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --brand-bg: #1a1a1a;
+  --brand-surface: #2a2a2a;
+  --brand-surface-light: #3a3a3a;
+  --brand-border: #404040;
+  --brand-header: #f3142f;
+  --brand-text: #ffffff;
+  --brand-text-secondary: #a0a0a0;
+  --brand-text-muted: #666666;
+  --brand-stripes: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  --heading-from: #f3142f;
+  --heading-to: #ff6a3d;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -14,11 +33,84 @@
   }
 
   * {
-    @apply border-gray-200 dark:border-gray-700;
+    @apply border-gray-700;
   }
 }
 
 @layer components {
+  .brand-surface {
+    background-image: var(--brand-stripes),
+      radial-gradient(
+        1200px 400px at 10% 0%,
+        rgba(243, 20, 47, 0.18),
+        transparent 60%
+      ),
+      radial-gradient(
+        900px 300px at 90% 0%,
+        rgba(243, 20, 47, 0.12),
+        transparent 60%
+      ),
+      linear-gradient(180deg, var(--brand-bg), #1b1b1d 70%, #121214);
+    background-blend-mode: overlay, screen, screen, normal;
+  }
+
+  .brand-surface-hex {
+    background-color: #1a1a1a;
+    background-image: radial-gradient(
+        1400px 500px at 20% 0%,
+        rgba(243, 20, 47, 0.15),
+        transparent 65%
+      ),
+      radial-gradient(
+        1000px 400px at 80% 0%,
+        rgba(243, 20, 47, 0.1),
+        transparent 65%
+      ),
+      radial-gradient(
+        800px 300px at 50% 100%,
+        rgba(243, 20, 47, 0.05),
+        transparent 70%
+      );
+    background-blend-mode: screen, screen, normal;
+  }
+
+  .brand-heading {
+    background-image: linear-gradient(
+      90deg,
+      var(--heading-from),
+      var(--heading-to)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .brand-section {
+    background-color: var(--brand-bg);
+  }
+
+  .brand-surface-card {
+    background-color: var(--brand-surface);
+    border: 1px solid var(--brand-border);
+  }
+
+  .brand-surface-light {
+    background-color: var(--brand-surface-light);
+  }
+
+  .brand-h {
+    color: var(--brand-header);
+  }
+  .brand-sub {
+    color: var(--brand-text-secondary);
+  }
+  .brand-text {
+    color: var(--brand-text);
+  }
+  .brand-text-muted {
+    color: var(--brand-text-muted);
+  }
+
   .btn-primary {
     @apply bg-primary-500 hover:bg-primary-600 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
   }

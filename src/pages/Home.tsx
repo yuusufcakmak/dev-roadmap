@@ -19,9 +19,9 @@ const Home: React.FC = () => {
   const features = [
     {
       icon: FaRoute,
-      title: "Roadmap ile Başlayın",
+      title: "Tutorial ile Başlayın",
       description:
-        "Roadmap sayfasından React öğrenme yolculuğunuza başlayın. Seviyeleri takip ederek ilerleyin ve her konuyu tamamladığınızda işaretleyin.",
+        "Erstream React Tutorial ile React öğrenme yolculuğunuza başlayın. Adım adım ilerleyerek, her konuyu tamamladığınızda işaretleyin.",
       color: "from-blue-500 to-blue-600",
     },
     {
@@ -44,7 +44,7 @@ const Home: React.FC = () => {
     <div className="min-h-screen">
       <Hero />
 
-      <section className="py-20 bg-white dark:bg-secondary-800">
+      <section className="py-20 brand-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -53,10 +53,10 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Neden React Roadmap?
+            <h2 className="text-4xl font-bold mb-4 brand-h">
+              Neden Erstream React Tutorial?
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl brand-sub max-w-3xl mx-auto">
               Modern web geliştirme dünyasında React.js öğrenmek artık çok daha
               kolay. Adım adım ilerleyerek, pratik projelerle öğrenin.
             </p>
@@ -90,8 +90,8 @@ const Home: React.FC = () => {
               Hemen Başlayın!
             </h2>
             <p className="text-xl text-primary-100 mb-8">
-              React.js öğrenme yolculuğunuza bugün başlayın. Ücretsiz, kapsamlı
-              ve Türkçe içeriklerle ilerleyin.
+              Erstream React Tutorial ile React.js öğrenme yolculuğunuza bugün
+              başlayın. Ücretsiz, kapsamlı ve Türkçe içeriklerle ilerleyin.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

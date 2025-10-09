@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
+    <div className="min-h-screen brand-section py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,10 +40,8 @@ const Projects: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            React Projeleri
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold mb-4 brand-h">React Projeleri</h1>
+          <p className="text-xl brand-sub max-w-3xl mx-auto">
             Öğrendiğiniz React konularını pratik edebileceğiniz, zorluk
             seviyesine göre kategorize edilmiş projeler. Her proje size farklı
             beceriler kazandıracak.
@@ -62,7 +60,7 @@ const Projects: React.FC = () => {
               className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
                 selectedDifficulty === difficulty.id
                   ? `${difficulty.color} text-white shadow-lg`
-                  : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:shadow-md"
+                  : "bg-white dark:bg-secondary-800 text-gray-700 dark:text-white hover:shadow-md"
               }`}
             >
               {difficulty.name}
@@ -81,7 +79,7 @@ const Projects: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              className="bg-white dark:bg-secondary-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
             >
               <div className="h-48 bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center">
                 <FaCode className="text-6xl text-white opacity-80" />
@@ -114,13 +112,13 @@ const Projects: React.FC = () => {
                     {project.technologies.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
+                        className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-white text-xs rounded"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 4 && (
-                      <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded">
+                      <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-white text-xs rounded">
                         +{project.technologies.length - 4}
                       </span>
                     )}

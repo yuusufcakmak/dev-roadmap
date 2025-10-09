@@ -28,13 +28,11 @@ const TopicDetail: React.FC = () => {
 
   if (!result) {
     return (
-      <div className="min-h-screen py-12">
+      <div className="min-h-screen py-12 brand-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-            <h1 className="text-2xl font-bold text-red-600 mb-4">
-              Konu Bulunamadı
-            </h1>
-            <p className="text-gray-600 dark:text-gray-300">
+          <div className="bg-white dark:bg-secondary-800 rounded-lg shadow-lg p-6">
+            <h1 className="text-2xl font-bold brand-h mb-4">Konu Bulunamadı</h1>
+            <p className="brand-sub">
               Aradığınız konu bulunamadı. Lütfen doğru URL'yi kullandığınızdan
               emin olun.
             </p>
@@ -47,7 +45,7 @@ const TopicDetail: React.FC = () => {
   const { topic, category, level } = result;
 
   return (
-    <div className="min-h-screen py-12">
+    <div className="min-h-screen py-12 brand-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.nav
           initial={{ opacity: 0, y: -20 }}
@@ -55,7 +53,7 @@ const TopicDetail: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="mb-6"
         >
-          <ol className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+          <ol className="flex items-center space-x-2 text-sm brand-sub">
             <li>Roadmap</li>
             <li>→</li>
             <li>{level.name}</li>
@@ -71,16 +69,12 @@ const TopicDetail: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-6"
+          className="bg-white dark:bg-secondary-800 rounded-lg shadow-lg p-6 mb-6"
         >
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                {topic.title}
-              </h1>
-              <p className="text-gray-600 dark:text-gray-300 text-lg">
-                {topic.description}
-              </p>
+              <h1 className="text-3xl font-bold mb-2 brand-h">{topic.title}</h1>
+              <p className="brand-sub text-lg">{topic.description}</p>
             </div>
           </div>
         </motion.div>
@@ -90,7 +84,7 @@ const TopicDetail: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6"
+              className="bg-white dark:bg-secondary-800 rounded-lg shadow-lg p-6"
             >
               <div className="prose prose-lg dark:prose-invert max-w-none">
                 {(topicId === "gelistirme-sureci" ||
@@ -110,7 +104,7 @@ const TopicDetail: React.FC = () => {
                       .replace(/\n/g, "<br>")
                       .replace(
                         /```([^`]+)```/g,
-                        '<pre class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg overflow-x-auto"><code>$1</code></pre>'
+                        '<pre class="bg-gray-100 dark:bg-secondary-700 p-4 rounded-lg overflow-x-auto"><code>$1</code></pre>'
                       ),
                   }}
                 />
@@ -123,26 +117,26 @@ const TopicDetail: React.FC = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6"
+                className="bg-white dark:bg-secondary-800 rounded-lg shadow-lg p-6"
               >
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-xl font-bold mb-4 brand-h">
                   💻 Kod Örnekleri
                 </h3>
                 <div className="space-y-4">
                   {topic.codeExamples.map((example: any) => (
                     <div
                       key={example.id}
-                      className="border border-gray-200 dark:border-gray-700 rounded-lg p-4"
+                      className="border border-gray-200 dark:border-secondary-700 rounded-lg p-4"
                     >
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                      <h4 className="font-semibold mb-2 brand-h">
                         {example.title}
                       </h4>
-                      <pre className="bg-gray-100 dark:bg-gray-700 p-3 rounded text-sm overflow-x-auto">
+                      <pre className="bg-gray-100 dark:bg-secondary-700 p-3 rounded text-sm overflow-x-auto">
                         <code className={`language-${example.language}`}>
                           {example.code}
                         </code>
                       </pre>
-                      <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
+                      <p className="text-sm brand-sub mt-2">
                         {example.description}
                       </p>
                     </div>
@@ -155,11 +149,9 @@ const TopicDetail: React.FC = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6"
+                className="bg-white dark:bg-secondary-800 rounded-lg shadow-lg p-6"
               >
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                  📚 Kaynaklar
-                </h3>
+                <h3 className="text-xl font-bold mb-4 brand-h">📚 Kaynaklar</h3>
                 <div className="space-y-3">
                   {topic.resources.map((resource: any) => (
                     <a
@@ -167,13 +159,13 @@ const TopicDetail: React.FC = () => {
                       href={resource.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center p-3 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                      className="flex items-center p-3 border border-gray-200 dark:border-secondary-700 rounded-lg hover:bg-gray-50 dark:hover:bg-secondary-700 transition-colors"
                     >
                       <div className="flex-1">
-                        <h4 className="font-medium text-gray-900 dark:text-white">
+                        <h4 className="font-medium brand-h">
                           {resource.title}
                         </h4>
-                        <p className="text-sm text-gray-500 dark:text-gray-400 capitalize">
+                        <p className="text-sm brand-sub capitalize">
                           {resource.type}
                         </p>
                       </div>

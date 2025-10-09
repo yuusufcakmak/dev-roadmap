@@ -122,9 +122,7 @@ const ResourceCard: React.FC<{ resource: Resource }> = ({ resource }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-4 sm:p-6 ${
-        resource.featured ? "ring-2 ring-primary-500" : ""
-      }`}
+      className="bg-white dark:bg-secondary-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-4 sm:p-6 ring-2 ring-primary-500"
     >
       <div className="flex items-start space-x-3 sm:space-x-4">
         <div className="flex-shrink-0 text-xl sm:text-2xl">{resource.icon}</div>
@@ -167,7 +165,7 @@ const Resources: React.FC = () => {
   const toolResources = resources.filter((r) => r.type === "tool");
 
   return (
-    <div className="min-h-screen py-12">
+    <div className="min-h-screen py-12 brand-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -175,10 +173,10 @@ const Resources: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 sm:mb-12"
         >
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 brand-h">
             React.js Kaynakları
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-lg lg:text-xl brand-sub max-w-3xl mx-auto px-4">
             React.js öğrenmek ve geliştirmek için kapsamlı kaynak koleksiyonu.
             Resmi dokümantasyondan topluluk kaynaklarına kadar her şey burada.
           </p>
@@ -190,7 +188,7 @@ const Resources: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-12"
         >
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 brand-h">
             ⭐ Öne Çıkan Kaynaklar
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -206,7 +204,7 @@ const Resources: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-12"
         >
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 brand-h">
             📚 Resmi Dokümantasyon
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
@@ -221,7 +219,7 @@ const Resources: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-12"
         >
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 brand-h">
             🎥 Video Eğitimler
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
@@ -236,7 +234,7 @@ const Resources: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-12"
         >
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 brand-h">
             📝 Makaleler ve Blog Yazıları
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
@@ -251,7 +249,7 @@ const Resources: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mb-12"
         >
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 brand-h">
             🛠️ Araçlar ve Kütüphaneler
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">

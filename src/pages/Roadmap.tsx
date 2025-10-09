@@ -68,7 +68,7 @@ const Roadmap: React.FC = () => {
 
   if (!roadmapData || roadmapData.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 dark:bg-secondary-800 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-500 mx-auto mb-4"></div>
           <p className="text-gray-600 dark:text-gray-400">
@@ -80,15 +80,15 @@ const Roadmap: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+    <div className="min-h-screen brand-surface-hex">
+      <div className="bg-white dark:bg-secondary-800 shadow-sm border-b border-gray-200 dark:border-secondary-700">
         <div className="container mx-auto px-4 py-4 sm:py-6">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="flex-1 min-w-0">
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">
                 React Öğrenme Roadmap'i
               </h1>
-              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
                 Adım adım React.js öğrenme yolculuğunuz
               </p>
             </div>
@@ -101,9 +101,9 @@ const Roadmap: React.FC = () => {
                   %{Math.round(progressPercentage)}
                 </div>
               </div>
-              <div className="w-24 sm:w-32 h-2 sm:h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+              <div className="w-24 sm:w-32 h-2 sm:h-3 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
                 <motion.div
-                  className="h-full bg-gradient-to-r from-primary-500 to-primary-600"
+                  className="h-full bg-gradient-to-r from-green-500 to-green-600"
                   initial={{ width: 0 }}
                   animate={{ width: `${progressPercentage}%` }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
@@ -134,7 +134,7 @@ const Roadmap: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 mb-6"
+                className="bg-white dark:bg-secondary-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 mb-6"
               >
                 <div className="p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700">
                   <div className="flex items-center gap-3">
@@ -145,7 +145,7 @@ const Roadmap: React.FC = () => {
                       <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white break-words">
                         {category.name}
                       </h2>
-                      <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 break-words">
+                      <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 break-words">
                         {category.description}
                       </p>
                     </div>
@@ -189,7 +189,7 @@ const Roadmap: React.FC = () => {
                             className={`p-4 rounded-lg border transition-all duration-200 ${
                               isCompleted
                                 ? "bg-green-50 border-green-200 dark:bg-green-900/20 dark:border-green-800"
-                                : "bg-gray-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600 hover:shadow-md"
+                                : "bg-gray-50 border-gray-200 dark:bg-secondary-800 dark:border-gray-700 hover:shadow-md"
                             }`}
                           >
                             <div className="flex items-start gap-3 sm:gap-4">
@@ -229,7 +229,7 @@ const Roadmap: React.FC = () => {
                                         {topic.title}
                                       </h3>
                                     </Link>
-                                    <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mb-3 break-words">
+                                    <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm mb-3 break-words">
                                       {topic.description}
                                     </p>
                                   </div>
@@ -257,7 +257,7 @@ const Roadmap: React.FC = () => {
                                 </div>
 
                                 {topic.resources.length > 0 && (
-                                  <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-600">
+                                  <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
                                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
                                       {topic.resources.map((resource: any) => (
                                         <a
@@ -265,7 +265,7 @@ const Roadmap: React.FC = () => {
                                           href={resource.url}
                                           target="_blank"
                                           rel="noopener noreferrer"
-                                          className="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded text-xs hover:bg-gray-200 dark:hover:bg-gray-500 transition-colors max-w-full min-w-0"
+                                          className="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-white rounded text-xs hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors max-w-full min-w-0"
                                         >
                                           <span className="truncate max-w-[120px] sm:max-w-[150px]">
                                             {resource.title}

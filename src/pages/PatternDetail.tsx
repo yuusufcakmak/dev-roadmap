@@ -42,7 +42,6 @@ const withAuth = (WrappedComponent) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     
     useEffect(() => {
-      // Authentication logic
       checkAuth().then(setIsAuthenticated);
     }, []);
     
@@ -54,7 +53,6 @@ const withAuth = (WrappedComponent) => {
   };
 };
 
-// Kullanım
 const ProtectedComponent = withAuth(MyComponent);`,
       bestPractices: [
         "HOC'ları sadece gerekli olduğunda kullanın",
@@ -103,7 +101,6 @@ const DataProvider = ({ children }) => {
   return children({ data, loading });
 };
 
-// Kullanım
 <DataProvider>
   {({ data, loading }) => (
     loading ? <Spinner /> : <DataDisplay data={data} />
@@ -173,7 +170,6 @@ const SelectContent = ({ children }) => {
   return isOpen ? <div className="select-content">{children}</div> : null;
 };
 
-// Kullanım
 <Select value={selected} onChange={setSelected}>
   <SelectTrigger>
     {selected || "Seçiniz"}
@@ -250,7 +246,6 @@ const useTheme = () => {
   return context;
 };
 
-// Kullanım
 function App() {
   return (
     <ThemeProvider>
@@ -348,7 +343,6 @@ const useLocalStorage = (key, initialValue) => {
   return [storedValue, setValue];
 };
 
-// Kullanım
 function UserProfile() {
   const { data: user, loading, error } = useApi('/api/user');
   const [theme, setTheme] = useLocalStorage('theme', 'light');
@@ -416,13 +410,11 @@ class EventEmitter {
   }
 }
 
-// React Hook ile kullanım
 const useEventEmitter = () => {
   const emitterRef = useRef(new EventEmitter());
   
   useEffect(() => {
     return () => {
-      // Cleanup
       emitterRef.current.events = {};
     };
   }, []);
@@ -430,7 +422,6 @@ const useEventEmitter = () => {
   return emitterRef.current;
 };
 
-// Kullanım
 function ChatRoom() {
   const emitter = useEventEmitter();
   const [messages, setMessages] = useState([]);
@@ -514,12 +505,10 @@ const ComponentFactory = {
   }
 };
 
-// Dynamic Component Renderer
 const DynamicRenderer = ({ type, props, children }) => {
   return ComponentFactory.create(type, { ...props, children });
 };
 
-// Plugin System
 const PluginManager = {
   plugins: new Map(),
   
@@ -540,7 +529,6 @@ const PluginManager = {
   }
 };
 
-// Kullanım
 function Dashboard() {
   const widgets = [
     { type: 'card', title: 'Users', count: 1000 },
@@ -598,7 +586,6 @@ function Dashboard() {
       cons: ["Memory Usage", "Cache Invalidation", "Complexity"],
       codeExample: `// Memoization Pattern Örneği
 const ExpensiveComponent = ({ data, filter }) => {
-  // Pahalı hesaplama
   const expensiveValue = useMemo(() => {
     console.log('Expensive calculation running...');
     return data
@@ -606,10 +593,8 @@ const ExpensiveComponent = ({ data, filter }) => {
       .reduce((sum, item) => sum + item.value, 0);
   }, [data, filter]);
   
-  // Callback memoization
   const handleClick = useCallback((id) => {
     console.log('Clicked:', id);
-    // Handle click logic
   }, []);
   
   return (
@@ -620,7 +605,6 @@ const ExpensiveComponent = ({ data, filter }) => {
   );
 };
 
-// React.memo ile component memoization
 const MemoizedChild = React.memo(({ name, age }) => {
   console.log('Child component rendered');
   return (
@@ -631,7 +615,6 @@ const MemoizedChild = React.memo(({ name, age }) => {
   );
 });
 
-// Custom memoization hook
 const useMemoizedValue = (value, dependencies) => {
   const memoizedValue = useMemo(() => {
     return expensiveCalculation(value);
@@ -640,7 +623,6 @@ const useMemoizedValue = (value, dependencies) => {
   return memoizedValue;
 };
 
-// Kullanım
 function ParentComponent() {
   const [count, setCount] = useState(0);
   const [name, setName] = useState('John');
@@ -683,9 +665,9 @@ function ParentComponent() {
 
   if (!pattern) {
     return (
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
+      <div className="min-h-screen brand-section flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-2xl font-bold mb-4 brand-h">
             Pattern Bulunamadı
           </h1>
           <Link
@@ -701,8 +683,8 @@ function ParentComponent() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+    <div className="min-h-screen brand-section">
+      <div className="bg-white dark:bg-secondary-800 shadow-sm border-b border-gray-200 dark:border-secondary-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -712,7 +694,7 @@ function ParentComponent() {
             <div className="flex items-center gap-4 mb-6">
               <Link
                 to="/design-patterns"
-                className="inline-flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                className="inline-flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-secondary-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-secondary-600 transition-colors"
               >
                 <FaArrowLeft size={16} />
                 Geri Dön
@@ -722,10 +704,10 @@ function ParentComponent() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 brand-h">
               {pattern.name}
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl">
+            <p className="text-xl brand-sub max-w-3xl">
               {pattern.detailedDescription}
             </p>
           </motion.div>
@@ -739,9 +721,9 @@ function ParentComponent() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
+              className="bg-white dark:bg-secondary-800 rounded-xl shadow-lg p-6"
             >
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-2xl font-bold mb-4 brand-h">
                 Pattern Diyagramı
               </h2>
               <PatternDiagram pattern={patternId || ""} />
@@ -750,13 +732,13 @@ function ParentComponent() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
+              className="bg-white dark:bg-secondary-800 rounded-xl shadow-lg p-6"
             >
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 brand-h">
                 <FaCode className="text-blue-500" />
                 Kod Örneği
               </h2>
-              <pre className="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto">
+              <pre className="bg-gray-100 dark:bg-secondary-900 p-4 rounded-lg overflow-x-auto">
                 <code className="text-sm text-gray-800 dark:text-gray-200">
                   {pattern.codeExample}
                 </code>
@@ -766,9 +748,9 @@ function ParentComponent() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
+              className="bg-white dark:bg-secondary-800 rounded-xl shadow-lg p-6"
             >
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 brand-h">
                 <FaLightbulb className="text-yellow-500" />
                 En İyi Uygulamalar
               </h2>
@@ -780,9 +762,7 @@ function ParentComponent() {
                         className="text-green-500 mt-1 flex-shrink-0"
                         size={16}
                       />
-                      <span className="text-gray-700 dark:text-gray-300">
-                        {practice}
-                      </span>
+                      <span className="brand-sub">{practice}</span>
                     </li>
                   )
                 )}
@@ -794,15 +774,13 @@ function ParentComponent() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
+              className="bg-white dark:bg-secondary-800 rounded-xl shadow-lg p-6"
             >
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
-                Hızlı Bilgi
-              </h3>
+              <h3 className="text-lg font-bold mb-4 brand-h">Hızlı Bilgi</h3>
 
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                  <h4 className="font-semibold mb-2 brand-h">
                     Kullanım Alanları
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -818,10 +796,8 @@ function ParentComponent() {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
-                    Örnekler
-                  </h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-700 p-2 rounded">
+                  <h4 className="font-semibold mb-2 brand-h">Örnekler</h4>
+                  <p className="text-sm brand-sub bg-gray-50 dark:bg-secondary-700 p-2 rounded">
                     {pattern.example}
                   </p>
                 </div>
@@ -831,9 +807,9 @@ function ParentComponent() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
+              className="bg-white dark:bg-secondary-800 rounded-xl shadow-lg p-6"
             >
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
+              <h3 className="text-lg font-bold mb-4 brand-h">
                 Artılar ve Eksiler
               </h3>
 
@@ -847,7 +823,7 @@ function ParentComponent() {
                     {pattern.pros.map((pro: string) => (
                       <li
                         key={pro}
-                        className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2"
+                        className="text-sm brand-sub flex items-center gap-2"
                       >
                         <div className="w-1 h-1 bg-green-500 rounded-full"></div>
                         {pro}
@@ -865,7 +841,7 @@ function ParentComponent() {
                     {pattern.cons.map((con: string) => (
                       <li
                         key={con}
-                        className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2"
+                        className="text-sm brand-sub flex items-center gap-2"
                       >
                         <div className="w-1 h-1 bg-red-500 rounded-full"></div>
                         {con}
@@ -879,11 +855,9 @@ function ParentComponent() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6"
+              className="bg-white dark:bg-secondary-800 rounded-xl shadow-lg p-6"
             >
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
-                Dış Kaynaklar
-              </h3>
+              <h3 className="text-lg font-bold mb-4 brand-h">Dış Kaynaklar</h3>
 
               <div className="space-y-3">
                 {pattern.externalLinks.map((link: any, index: number) => (
@@ -892,7 +866,7 @@ function ParentComponent() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors group"
+                    className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-secondary-700 rounded-lg hover:bg-gray-100 dark:hover:bg-secondary-600 transition-colors group"
                   >
                     <div className="flex-shrink-0">
                       {link.type === "documentation" ? (
@@ -905,12 +879,10 @@ function ParentComponent() {
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400">
+                      <p className="text-sm font-medium brand-h group-hover:text-primary-600 dark:group-hover:text-primary-400">
                         {link.title}
                       </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
-                        {link.url}
-                      </p>
+                      <p className="text-xs brand-sub truncate">{link.url}</p>
                     </div>
                     <FaExternalLinkAlt
                       className="text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300"

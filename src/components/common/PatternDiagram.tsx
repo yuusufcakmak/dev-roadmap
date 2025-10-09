@@ -17,7 +17,7 @@ const PatternDiagram: React.FC<PatternDiagramProps> = ({
         x="200"
         y="30"
         textAnchor="middle"
-        className="text-lg font-bold fill-gray-800"
+        className="text-lg font-bold brand-h"
       >
         Higher-Order Component (HOC)
       </text>
@@ -132,7 +132,7 @@ const PatternDiagram: React.FC<PatternDiagramProps> = ({
         x="200"
         y="30"
         textAnchor="middle"
-        className="text-lg font-bold fill-gray-800"
+        className="text-lg font-bold brand-h"
       >
         Render Props Pattern
       </text>
@@ -250,7 +250,7 @@ const PatternDiagram: React.FC<PatternDiagramProps> = ({
         x="200"
         y="30"
         textAnchor="middle"
-        className="text-lg font-bold fill-gray-800"
+        className="text-lg font-bold brand-h"
       >
         Compound Components Pattern
       </text>
@@ -380,7 +380,7 @@ const PatternDiagram: React.FC<PatternDiagramProps> = ({
         x="200"
         y="30"
         textAnchor="middle"
-        className="text-lg font-bold fill-gray-800"
+        className="text-lg font-bold brand-h"
       >
         Provider Pattern (Context API)
       </text>
@@ -527,7 +527,7 @@ const PatternDiagram: React.FC<PatternDiagramProps> = ({
         x="200"
         y="30"
         textAnchor="middle"
-        className="text-lg font-bold fill-gray-800"
+        className="text-lg font-bold brand-h"
       >
         Custom Hooks Pattern
       </text>
@@ -652,7 +652,7 @@ const PatternDiagram: React.FC<PatternDiagramProps> = ({
         x="200"
         y="30"
         textAnchor="middle"
-        className="text-lg font-bold fill-gray-800"
+        className="text-lg font-bold brand-h"
       >
         Observer Pattern
       </text>
@@ -806,7 +806,7 @@ const PatternDiagram: React.FC<PatternDiagramProps> = ({
         x="200"
         y="30"
         textAnchor="middle"
-        className="text-lg font-bold fill-gray-800"
+        className="text-lg font-bold brand-h"
       >
         Factory Pattern
       </text>
@@ -952,7 +952,7 @@ const PatternDiagram: React.FC<PatternDiagramProps> = ({
         x="200"
         y="30"
         textAnchor="middle"
-        className="text-lg font-bold fill-gray-800"
+        className="text-lg font-bold brand-h"
       >
         Memoization Pattern
       </text>
@@ -1131,7 +1131,7 @@ const PatternDiagram: React.FC<PatternDiagramProps> = ({
         return renderMemoizationDiagram();
       default:
         return (
-          <div className="flex items-center justify-center h-64 text-gray-500 dark:text-gray-400">
+          <div className="flex items-center justify-center h-64 brand-sub">
             <div className="text-center">
               <div className="text-4xl mb-2">📊</div>
               <p>Diyagram bulunamadı</p>
@@ -1143,7 +1143,7 @@ const PatternDiagram: React.FC<PatternDiagramProps> = ({
 
   return (
     <div
-      className={`bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg ${className}`}
+      className={`bg-white dark:bg-secondary-800 rounded-lg p-4 shadow-lg ${className}`}
     >
       {renderDiagram()}
     </div>

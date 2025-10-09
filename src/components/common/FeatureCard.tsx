@@ -27,10 +27,10 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         >
           <Icon size={28} />
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary-500 transition-colors">
+        <h3 className="text-2xl font-bold brand-h mb-4 group-hover:text-primary-500 transition-colors">
           {title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+        <p className="brand-sub leading-relaxed">
           {description}
         </p>
         <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary-500/5 to-accent-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
